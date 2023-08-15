@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../components/Dashboard";
-import LoginForm from "../components/LoginForm";
-import LogOut from "../components/LogOut";
-import Media from "../components/Media";
+import Dashboard from "../pages/Dashboard";
+import LoginForm from "../pages/LoginForm";
+import LogOut from "../pages/LogOut";
+import Media from "../pages/Media";
 
 const Paths = () => {
   return (
