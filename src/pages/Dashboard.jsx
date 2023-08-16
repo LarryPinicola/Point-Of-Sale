@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../components/Navbar";
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <div className="h-screen w-full flex justify-center items-center">
+        Dashboard Page
+      </div>
+    </>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
