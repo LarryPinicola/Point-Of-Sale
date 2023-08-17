@@ -25,7 +25,7 @@ const Breadcrumbs = () => {
     <nav className="flex" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
-          <Link to="/home" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#ff6f61] dark:text-gray-400 dark:hover:text-white ms-10">
+          <Link to="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#ff6f61] dark:text-gray-400 dark:hover:text-white ms-10">
             User
           </Link>
         </li>
@@ -39,7 +39,7 @@ const Breadcrumbs = () => {
               >
                 {index === breadcrumbs.length - 1 ? 
                 breadcrumb.label : 
-                <Link to="/UIElement/chart">
+                <Link to="/User/chart">
                 UI Element
                 </Link>
                 } {/* Add space before capital letters */}
