@@ -10,7 +10,7 @@ const Profile = () => {
       </div>
       <div className="bg-[#202124] px-5 w-full ">
         <MyAccount />
-        <Edit/>
+        {/* <Edit/> */}
       </div>
     </div>
   );

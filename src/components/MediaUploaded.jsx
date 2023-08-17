@@ -5,7 +5,7 @@ import UploadedPics from "./UploadedPics";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const MediaUploaded = () => {
-  const [list, setList] = useState(false);
+  const [list, setList] = useState(true);
 
   const pics = [
     {
