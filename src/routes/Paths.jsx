@@ -8,6 +8,8 @@ import Profile from "../pages/Profile";
 import Edit from "../components/Edit";
 import MyAccount from "../components/MyAccount";
 import EditFromMyAcc from "../pages/EditFromMyAcc";
+import Overview from "../pages/Overview";
+import CreateUser from "../pages/CreateUser";
 
 const Paths = () => {
   return (
@@ -16,11 +18,12 @@ const Paths = () => {
       <Route path="/login" element={<LoginForm />} />
       <Route path="/logout" element={<LogOut />} />
       <Route path="/media" element={<Media />} />
-
       <Route path="/profile" element={<Profile />} />
       <Route path="/myaccount" element={<MyAccount />} />
       <Route path="/edit" element={<Edit />} />
       <Route path="/editpage" element={<EditFromMyAcc />} />
+      <Route path="/User/overview" element={<Overview />} />
+      <Route path="/User/createuser" element={<CreateUser/>} />
     </Routes>
   );
 };
