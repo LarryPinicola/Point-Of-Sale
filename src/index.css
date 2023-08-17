@@ -10,3 +10,9 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+.bg-image{
+  background-image : url("image/naruto.png") ;
+  background-repeat: no-repeat;
+  
+}
