@@ -11,8 +11,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body{
+  background-color: #202121;
+  color: white;
+}
+
 .bg-image{
   background-image : url("image/naruto.png") ;
   background-repeat: no-repeat;
-  
 }

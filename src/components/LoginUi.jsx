@@ -1,0 +1,61 @@
+import { Button, TextInput } from "@mantine/core";
+import { useForm } from "@mantine/form";
+import React from "react";
+
+const LoginUi = () => {
+  const form = useForm({
+    initialValues: { name: "", email: "" },
+    validate: {
+      name: (value) =>
+        value.length < 2 ? "Name must have at least 2 letters" : null,
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+    },
+  });
+
+  return (
+    <div className="flex justify-around h-screen items-center bg-[#171717] w-full">
+      {/* image section */}
+      <div className="">
+        <img src="../../public/Login.svg" alt="" className="w-96 h-96" />
+      </div>
+
+      {/* form section */}
+      <div className=" p-10 rounded-lg text-center bg-slate-300">
+        <h1 className="tracking-widest text-lg mb-5 text-black">Welcome To</h1>
+        <h1 className="text-6xl font-semibold mb-10 text-black">
+          vendVortex
+        </h1>
+
+        {/* login form */}
+        <form action="" className="" onSubmit={form}>
+          <div className="">
+            <TextInput
+              className="text-start outline-none"
+              label="Name"
+              placeholder="Enter your Name"
+              {...form.getInputProps("name")}
+            />
+          </div>
+          <div className="">
+            <TextInput
+              className="text-start outline-none"
+              mt="sm"
+              label="Email"
+              placeholder="Enter your Email"
+              {...form.getInputProps("email")}
+            />
+          </div>
+          <Button
+            type="submit"
+            mt="sm"
+            className="bg-gray-800 mt-10 px-8 text-lg"
+          >
+            Log In
+          </Button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default LoginUi;

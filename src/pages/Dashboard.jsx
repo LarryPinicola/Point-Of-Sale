@@ -1,3 +1,5 @@
+import React from "react";
+import Navbar from "../components/Navbar";
 import React from 'react'
 import User from '../components/User'
 import LogOut from './LogOut'
@@ -7,6 +9,8 @@ import Overview from './Overview'
 const Dashboard = () => {
 
   return (
+    <>
+      <Navbar />
     <aside className='w-full flex'>
       <div className='w-[15%] bg-[#161618] h-screen border-r-[0.5px]'>
       <User/>
@@ -22,9 +26,9 @@ const Dashboard = () => {
 //       </h1>
 //     </div>
     </aside>
-   
+   </>
    
   )
 }
 
-export default Dashboard
+export default Dashboard;

@@ -1,9 +1,10 @@
 import React from 'react'
+import LoginUi from '../components/LoginUi'
 
 const LoginForm = () => {
   return (
     <div>
-      This is Loginform
+      <LoginUi/>
     </div>
   )
 }
