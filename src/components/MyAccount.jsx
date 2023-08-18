@@ -4,11 +4,16 @@ import { GoHome } from "react-icons/go";
 import { BiSolidPhone } from "react-icons/bi";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FaStore } from "react-icons/fa";
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 
 const MyAccount = () => {
   const birthDate = "12/4/1999";
   const gender = "Male";
   const address = "No.2, Baho Street, Bahan, Yangon";
+
+  const phone = "09669777549";
+  const position = "Sale Executive";
+  const email = "example@gmail.com";
 
   return (
     <div>
@@ -30,7 +35,7 @@ const MyAccount = () => {
       </div>
       {/* myAcc information */}
       {/* above section */}
-      <div className="bg-[#171717] p-16 mt-16 w-[84vw] h-[30vh] relative">
+      <div className="bg-[#171717] p-16 mt-16 w-[84vw] h-[20vh] relative">
         {/* profile pic */}
         <div className="">
           <div className="absolute top-[-50px]">
@@ -46,7 +51,7 @@ const MyAccount = () => {
           </div>
         </div>
         {/* name and icons */}
-        <div className="flex justify-between items-center relative top-[-70%]">
+        <div className="flex justify-between items-center relative top-[-50%]">
           <div className="ms-36">
             <h1 className="text-2xl tracking-wide">Ethan James</h1>
             <p className="text-gray-400 text-sm">
@@ -62,60 +67,95 @@ const MyAccount = () => {
             </div>
           </div>
         </div>
-        {/* sections */}
-        <div className="flex gap-8 mt-7">
-          {/* personal */}
-          <div className=" flex items-center gap-2 cursor-pointer">
-            <div className="text-blue-400">
-              <FaStore />
-            </div>
-            <h1 className="font-semibold text-lg tracking-wide text-gray-400">
-              Personal
-            </h1>
-          </div>
-          {/* Login info */}
-          <div className=" flex items-center gap-2 cursor-pointer">
-            <div className="text-blue-400">
-              <FaStore />
-            </div>
-            <h1 className="font-semibold text-lg tracking-wide text-gray-400">
-              Login Information
-            </h1>
-          </div>
-          {/* password */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <div className="text-blue-400">
-              <FaStore />
-            </div>
-            <h1 className="font-semibold text-lg tracking-wide text-gray-400">
-              Password
-            </h1>
-          </div>
-        </div>
       </div>
-      {/* below section */}
-      <div className="border-t border-gray-500 bg-[#1A1A1A] w-[84vw] h-[30vh] ">
-        {/*  */}
-        <div className="flex flex-col gap-3 mt-7 ms-16">
-          <div className="flex items-center">
-            <h1 className="me-[6.5rem] text-gray-400 text-lg tracking-wide">
-              Date Of Birth
-            </h1>
-            <p className="tracking-wide text-lg">: {birthDate}</p>
-          </div>
-          <div className="flex items-center">
-            <h1 className="me-[9.5rem] text-gray-400 text-lg tracking-wide">
-              Gender
-            </h1>
-            <p className="tracking-wide text-lg">: {gender}</p>
-          </div>
-          <div className="flex items-center">
-            <h1 className="me-[9.1rem] text-gray-400 text-lg tracking-wide">
-              Address
-            </h1>
-            <p className="tracking-wide text-lg">: {address}</p>
-          </div>
-        </div>
+      {/* down section (TABs)*/}
+      <div className="bg-[#171717] py-5 h-56 ">
+        <Tabs variant="line">
+          <TabList className="flex gap-10 items-center ms-16">
+            {/* personal tab */}
+            <Tab className="flex items-center gap-2 cursor-pointer">
+              <div className="text-blue-400">
+                <FaStore />
+              </div>
+              <h1 className="font-semibold text-lg tracking-wide text-gray-400">
+                Personal
+              </h1>
+            </Tab>
+            {/* login information tab */}
+            <Tab className="flex items-center gap-2 cursor-pointer">
+              <div className="text-blue-400">
+                <FaStore />
+              </div>
+              <h1 className="font-semibold text-lg tracking-wide text-gray-400">
+                Login Information
+              </h1>
+            </Tab>
+            {/* password tab */}
+            <Tab className="flex items-center gap-2 cursor-pointer">
+              <div className="text-blue-400">
+                <FaStore />
+              </div>
+              <h1 className="font-semibold text-lg tracking-wide text-gray-400">
+                Password
+              </h1>
+            </Tab>
+          </TabList>
+
+          <TabPanels className="mt-7 border-t border-gray-500">
+            {/* personal */}
+            <TabPanel>
+              <div className="flex flex-col gap-3 mt-7 ms-16">
+                <div className="flex items-center">
+                  <h1 className="me-[6.5rem] text-gray-400 text-lg tracking-wide">
+                    Date Of Birth
+                  </h1>
+                  <p className="tracking-wide text-lg">: {birthDate}</p>
+                </div>
+                <div className="flex items-center">
+                  <h1 className="me-[9.5rem] text-gray-400 text-lg tracking-wide">
+                    Gender
+                  </h1>
+                  <p className="tracking-wide text-lg">: {gender}</p>
+                </div>
+                <div className="flex items-center">
+                  <h1 className="me-[9.1rem] text-gray-400 text-lg tracking-wide">
+                    Address
+                  </h1>
+                  <p className="tracking-wide text-lg">: {address}</p>
+                </div>
+              </div>
+            </TabPanel>
+            {/* login info */}
+            <TabPanel>
+              <div className="flex flex-col gap-3 mt-7 ms-16">
+                <div className="flex items-center">
+                  <h1 className="me-[6.5rem] text-gray-400 text-lg tracking-wide">
+                    Phone
+                  </h1>
+                  <p className="tracking-wide text-lg">: {phone}</p>
+                </div>
+                <div className="flex items-center">
+                  <h1 className="me-[5.6rem] text-gray-400 text-lg tracking-wide">
+                    Position
+                  </h1>
+                  <p className="tracking-wide text-lg">: {position}</p>
+                </div>
+                <div className="flex items-center">
+                  <h1 className="me-[7rem] text-gray-400 text-lg tracking-wide">
+                    Email
+                  </h1>
+                  <p className="tracking-wide text-lg">: {email}</p>
+                </div>
+              </div>
+            </TabPanel>
+            {/* password */}
+            <TabPanel>
+              <div className="flex flex-col gap-3 mt-7 ms-16">
+                <h1 className="text-3xl">Password</h1>
+              </div>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </div>
     </div>
   );
