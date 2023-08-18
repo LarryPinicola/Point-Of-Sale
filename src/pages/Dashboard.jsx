@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import User from '../components/User'
-import LogOut from './LogOut'
-import Overview from './Overview'
 import {AiFillHome} from "react-icons/ai"
 import {BsShop} from "react-icons/bs"
 import {PiUserCirclePlusBold} from "react-icons/pi"
@@ -11,9 +8,7 @@ import {MdInventory} from "react-icons/md"
 import {FcGallery} from "react-icons/fc";
 import {CgProfile} from "react-icons/cg"
 import {FiLogOut} from "react-icons/fi"
-import UserProfile from "./UserProfile";
 import { Link, NavLink } from "react-router-dom";
-import HomeOverview from "./HomeOverview";
 
 const Dashboard = () => {
   const [show,setShow] = useState(false);
@@ -25,15 +20,9 @@ const Dashboard = () => {
     <>
     <Navbar/>
     <aside className='w-full flex fixed'>
-      <div className='w-[15%] bg-[#161618] h-screen border-r-[0.5px]'>
-      <User/>
-      <LogOut/>
-   </div>
-   <div className="w-[85%] bg-[#202124]">
-    <Overview/>
-   
-   </div>
+      <div className='w-[15%] bg-[#161618] h-screen border-r-[0.5px]'>   
         {/* HomeOverView */}
+
       <div className='border-b-[0.5px]'>
           <div className='flex items-center ms-5 text-white py-5 '>
               <AiFillHome className='text-2xl '/>
@@ -186,6 +175,8 @@ const Dashboard = () => {
     </div>
         {/* </Logout> */}
    </div>
+    
+   {/* </div> */}
     </aside>
    </>
    

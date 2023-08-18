@@ -5,7 +5,7 @@ import {BsArrowRightCircleFill} from "react-icons/bs"
 import { Link } from 'react-router-dom'
 import OverviewDetails from '../pages/OverviewDetails'
 
-const Table = ({show,setShow}) => {
+const Table = () => {
  
     const lists = [
         {id : 1 , No : 1 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
