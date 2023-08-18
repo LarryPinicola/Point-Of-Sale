@@ -21,8 +21,8 @@ const MyAccount = () => {
       <div className="flex justify-between items-center my-7">
         {/* routes */}
         <div className="text-white mb-5">
-          <h1 className="text-2xl tracking-wide">Profile</h1>
-          <p className="text-gray-400 text-sm">
+          <h1 className="text-2xl font-semibold pb-1">Profile</h1>
+          <p className="text-gray-400">
             Profile / My Account / Information
           </p>
         </div>

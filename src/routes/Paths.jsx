@@ -12,6 +12,7 @@ import Overview from "../pages/Overview";
 import CreateUser from "../pages/CreateUser";
 import HomeOverview from "../pages/HomeOverview";
 import Sale from "../pages/Sale";
+import Products from "../pages/Products";
 
 const Paths = () => {
   return (
@@ -27,7 +28,9 @@ const Paths = () => {
       <Route path="/edit" element={<Edit />} />
       <Route path="/editpage" element={<EditFromMyAcc />} />
       <Route path="/User/overview" element={<Overview />} />
-      <Route path="/User/createuser" element={<CreateUser/>} />
+      <Route path="/User/createuser" element={<CreateUser />} />
+      {/* inventory */}
+      <Route path="/products" element={<Products />} />
     </Routes>
   );
 };
