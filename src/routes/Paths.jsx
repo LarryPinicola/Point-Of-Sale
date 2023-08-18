@@ -10,12 +10,16 @@ import MyAccount from "../components/MyAccount";
 import EditFromMyAcc from "../pages/EditFromMyAcc";
 import Overview from "../pages/Overview";
 import CreateUser from "../pages/CreateUser";
+import HomeOverview from "../pages/HomeOverview";
+import Sale from "../pages/Sale";
 
 const Paths = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/login" element={<LoginForm />} />
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard/home" element={<HomeOverview />} />
+      <Route path="/dashboard/sale/cashier" element={<Sale />} />
       <Route path="/logout" element={<LogOut />} />
       <Route path="/media" element={<Media />} />
       <Route path="/profile" element={<Profile />} />
