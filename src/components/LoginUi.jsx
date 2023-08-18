@@ -1,6 +1,7 @@
 import { Button, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const LoginUi = () => {
   const form = useForm({
@@ -16,7 +17,7 @@ const LoginUi = () => {
     <div className="flex justify-around h-screen items-center bg-[#171717] w-full">
       {/* image section */}
       <div className="">
-        <img src="../../public/Login.svg" alt="" className="w-96 h-96" />
+        <img src="../Login.svg" alt="" className="w-96 h-96" />
       </div>
 
       {/* form section */}
@@ -27,7 +28,7 @@ const LoginUi = () => {
         </h1>
 
         {/* login form */}
-        <form action="" className="" onSubmit={form}>
+        <form action="" className="" >
           <div className="">
             <TextInput
               className="text-start outline-none"
@@ -50,7 +51,9 @@ const LoginUi = () => {
             mt="sm"
             className="bg-gray-800 mt-10 px-8 text-lg"
           >
-            Log In
+          <Link to = "/dashboard">
+          Log In
+          </Link>
           </Button>
         </form>
       </div>
