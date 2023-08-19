@@ -13,6 +13,10 @@ import CreateUser from "../pages/CreateUser";
 import HomeOverview from "../pages/HomeOverview";
 import Sale from "../pages/Sale";
 import Products from "../pages/Products";
+import AddProducts from "../pages/AddProducts";
+import AddProductsStepTwo from "../pages/AddProductsStepTwo";
+import AddProductsStepThree from "../pages/AddProductsStepThree";
+import AddedProduct from "../pages/AddedProduct";
 
 const Paths = () => {
   return (
@@ -31,6 +35,10 @@ const Paths = () => {
       <Route path="/User/createuser" element={<CreateUser />} />
       {/* inventory */}
       <Route path="/products" element={<Products />} />
+      <Route path="/addproducts" element={<AddProducts />} />
+      <Route path="/addproducts/step2" element={<AddProductsStepTwo />} />
+      <Route path="/addproducts/step3" element={<AddProductsStepThree />} />
+      <Route path="/addproducts/addedproduct" element={<AddedProduct />} />
     </Routes>
   );
 };

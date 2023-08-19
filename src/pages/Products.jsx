@@ -117,7 +117,7 @@ const Products = () => {
     },
   ];
 
-  const rows = productLists.map((product, index) => {
+  const rows = productLists.map((product, index) => { 
     return (
       <tr className="px-2" key={index}>
         <td className="py-4 ps-8 text-sm font-medium border-t">{product.no}</td>
