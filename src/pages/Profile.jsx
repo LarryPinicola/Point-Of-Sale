@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
 import MyAccount from "../components/MyAccount";
-import Edit from "../components/Edit";
 
 const Profile = () => {
   return (
-    <div className="w-full flex">
-      <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center ">
-        <h1 className="tracking-widest text-xl">sidebar</h1>
-      </div>
-      <div className="bg-[#202124] px-5 w-full ">
-        <MyAccount />
-        {/* <Edit/> */}
-      </div>
+   <>
+    
+  <div className='w-full'>
+    <Dashboard/>
+    <div className="container mx-auto">
+    <div className="grid grid-cols-1 mt-5 ms-28">
+      <MyAccount/>
     </div>
-  );
-};
+    </div>
+</div>
+   </>
+  )
+}
 
-export default Profile;
+export default Profile

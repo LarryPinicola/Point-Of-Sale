@@ -51,7 +51,7 @@ const LoginUi = () => {
             mt="sm"
             className="bg-gray-800 mt-10 px-8 text-lg"
           >
-          <Link to = "/dashboard">
+          <Link to = "/dashboard/home">
           Log In
           </Link>
           </Button>
