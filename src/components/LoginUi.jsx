@@ -7,9 +7,11 @@ const LoginUi = () => {
   const form = useForm({
     initialValues: { name: "", email: "" },
     validate: {
-      name: (value) =>
-        value.length < 2 ? "Name must have at least 2 letters" : null,
+      // name: (value) =>
+      //   value.length < 2 ? "Name must have at least 2 letters" : null,
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      password: (value) =>
+        value.length < 4 ? "Password must have at least 4 letters" : null,
     },
   });
 
@@ -23,27 +25,25 @@ const LoginUi = () => {
       {/* form section */}
       <div className=" p-10 rounded-lg text-center bg-slate-300">
         <h1 className="tracking-widest text-lg mb-5 text-black">Welcome To</h1>
-        <h1 className="text-6xl font-semibold mb-10 text-black">
-          vendVortex
-        </h1>
+        <h1 className="text-6xl font-semibold mb-10 text-black">vendVortex</h1>
 
         {/* login form */}
-        <form action="" className="" >
+        <form action="" className="">
           <div className="">
             <TextInput
               className="text-start outline-none"
-              label="Name"
-              placeholder="Enter your Name"
-              {...form.getInputProps("name")}
+              label="Email"
+              placeholder="Enter your Email"
+              {...form.getInputProps("email")}
             />
           </div>
           <div className="">
             <TextInput
               className="text-start outline-none"
               mt="sm"
-              label="Email"
-              placeholder="Enter your Email"
-              {...form.getInputProps("email")}
+              label="Password"
+              placeholder="Enter your Password"
+              {...form.getInputProps("password")}
             />
           </div>
           <Button
