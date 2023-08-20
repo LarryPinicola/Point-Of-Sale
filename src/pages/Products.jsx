@@ -8,6 +8,8 @@ import { BsPencil } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Navbar from "../components/Navbar";
+import AddBrandModal from "../components/AddBrandModal";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [table, setTable] = useState(true);
@@ -118,6 +120,17 @@ const Products = () => {
     },
   ];
 
+  // modal box intention
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const rows = productLists.map((product, index) => {
     return (
       <tr className="px-2" key={index}>
@@ -139,15 +152,20 @@ const Products = () => {
         </td>
         <td className="py-4 ps-8 text-sm font-medium border-t ">
           <div className="flex gap-3 items-center">
-            <div className="bg-gray-600 rounded-full p-1">
+            <div
+              className="bg-gray-600 rounded-full p-1 cursor-pointer"
+              onClick={openModal}
+            >
               <AiOutlinePlus className="text-sm" />
             </div>
-            <div className="bg-gray-600 rounded-full p-1">
+            <div className="bg-gray-600 rounded-full p-1 cursor-pointer">
               <BsPencil className="text-sm" />
             </div>
-            <div className="bg-gray-600 rounded-full p-1">
-              <FiArrowRight className="text-sm" />
-            </div>
+            <Link to={"/products/detail"}>
+              <div className="bg-gray-600 rounded-full p-1 cursor-pointer">
+                <FiArrowRight className="text-sm" />
+              </div>
+            </Link>
           </div>
         </td>
       </tr>
@@ -281,6 +299,11 @@ const Products = () => {
               <IoIosArrowForward />
             </div>
           </div>
+        </div>
+
+        {/* add brand modal */}
+        <div className="min-h-screen flex items-center justify-center">
+          <AddBrandModal isOpen={modalOpen} onClose={closeModal} />
         </div>
       </div>
     </>

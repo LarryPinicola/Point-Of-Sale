@@ -64,7 +64,7 @@ const AddedProduct = () => {
             {/* finish product information */}
             <div className="mt-3 flex gap-20 items-center">
               {/* information form */}
-              <div className="bg-[#171717] p-5 w-[70%]">
+              <div className="bg-[#171717] p-5 w-[50%]">
                 {/* above section */}
                 <div className="flex items-center gap-20">
                   {/* product pic  */}

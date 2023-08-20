@@ -2,6 +2,7 @@ import React from "react";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 
 const Modal = ({ isOpen, onClose }) => {
+  
   const pics = [
     {
       id: 1,

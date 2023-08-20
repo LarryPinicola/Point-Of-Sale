@@ -17,6 +17,7 @@ import AddProducts from "../pages/AddProducts";
 import AddProductsStepTwo from "../pages/AddProductsStepTwo";
 import AddProductsStepThree from "../pages/AddProductsStepThree";
 import AddedProduct from "../pages/AddedProduct";
+import ProductDetail from "../pages/ProductDetail";
 
 const Paths = () => {
   return (
@@ -39,6 +40,7 @@ const Paths = () => {
       <Route path="/addproducts/step2" element={<AddProductsStepTwo />} />
       <Route path="/addproducts/step3" element={<AddProductsStepThree />} />
       <Route path="/addproducts/addedproduct" element={<AddedProduct />} />
+      <Route path="/products/detail" element={<ProductDetail />} />
     </Routes>
   );
 };
