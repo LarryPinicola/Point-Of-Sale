@@ -18,6 +18,8 @@ import AddProductsStepTwo from "../pages/AddProductsStepTwo";
 import AddProductsStepThree from "../pages/AddProductsStepThree";
 import AddedProduct from "../pages/AddedProduct";
 import ProductDetail from "../pages/ProductDetail";
+import StockControl from "../pages/StockControl";
+import ManageBrands from "../pages/ManageBrands";
 
 const Paths = () => {
   return (
@@ -41,6 +43,8 @@ const Paths = () => {
       <Route path="/addproducts/step3" element={<AddProductsStepThree />} />
       <Route path="/addproducts/addedproduct" element={<AddedProduct />} />
       <Route path="/products/detail" element={<ProductDetail />} />
+      <Route path="/stockcontrol" element={<StockControl />} />
+      <Route path="/managebrands" element={<ManageBrands />} />
     </Routes>
   );
 };

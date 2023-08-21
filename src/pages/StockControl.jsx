@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
-import { CiSearch } from "react-icons/ci";
-import { FiGrid } from "react-icons/fi";
-import { TfiMenuAlt } from "react-icons/tfi";
-import ProductsPics from "../components/ProductsPics";
-import { BsPencil } from "react-icons/bs";
-import { FiArrowRight } from "react-icons/fi";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Navbar from "../components/Navbar";
-import AddBrandModal from "../components/AddBrandModal";
-import { Link } from "react-router-dom";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { FiGrid } from "react-icons/fi";
+import ProductsPics from "../components/ProductsPics";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const Products = () => {
+const StockControl = () => {
   const [table, setTable] = useState(true);
 
   const productPics = [
@@ -80,94 +74,56 @@ const Products = () => {
   const productLists = [
     {
       no: 1,
-      name: "MacBook Pro",
-      brand: "Apple",
-      unit: "$",
-      price: 10000,
-      total: 100,
+      name: "Watermelon",
+      user: "Sam",
+      addedQty: "10",
+      crateDate: "12/7/2023",
     },
     {
-      no: 1,
-      name: "MacBook Pro",
-      brand: "Apple",
-      unit: "$",
-      price: 10000,
-      total: 100,
+      no: 2,
+      name: "pear",
+      user: "Sam",
+      addedQty: "6",
+      crateDate: "12/7/2023",
     },
     {
-      no: 1,
-      name: "MacBook Pro",
-      brand: "Apple",
-      unit: "$",
-      price: 10000,
-      total: 100,
+      no: 3,
+      name: "mango",
+      user: "Sam",
+      addedQty: "2",
+      crateDate: "12/7/2023",
     },
     {
-      no: 1,
-      name: "MacBook Pro",
-      brand: "Apple",
-      unit: "$",
-      price: 10000,
-      total: 100,
+      no: 4,
+      name: "apple",
+      user: "Sam",
+      addedQty: "13",
+      crateDate: "12/7/2023",
     },
     {
-      no: 1,
-      name: "MacBook Pro",
-      brand: "Apple",
-      unit: "$",
-      price: 10000,
-      total: 100,
+      no: 5,
+      name: "dragon fruit",
+      user: "Sam",
+      addedQty: "4",
+      crateDate: "12/7/2023",
+    },
+    {
+      no: 6,
+      name: "orange",
+      user: "Sam",
+      addedQty: "9",
+      crateDate: "12/7/2023",
     },
   ];
 
-  // modal box intention
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const rows = productLists.map((product, index) => {
+  const row = productLists.map((product, index) => {
     return (
-      <tr className="px-2" key={index}>
-        <td className="py-4 ps-8 text-sm font-medium border-t">{product.no}</td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
-          {product.name}
-        </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
-          {product.brand}
-        </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
-          {product.unit}
-        </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
-          {product.price}
-        </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
-          {product.total}
-        </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t ">
-          <div className="flex gap-3 items-center">
-            <div
-              className="bg-gray-600 rounded-full p-1 cursor-pointer"
-              onClick={openModal}
-            >
-              <AiOutlinePlus className="text-sm" />
-            </div>
-            <div className="bg-gray-600 rounded-full p-1 cursor-pointer">
-              <BsPencil className="text-sm" />
-            </div>
-            <Link to={"/products/detail"}>
-              <div className="bg-gray-600 rounded-full p-1 cursor-pointer">
-                <FiArrowRight className="text-sm" />
-              </div>
-            </Link>
-          </div>
-        </td>
+      <tr className="" key={index}>
+        <td className="border-t py-3 text-sm">{product.no}</td>
+        <td className="border-t py-3 text-sm">{product.name}</td>
+        <td className="border-t py-3 text-sm">{product.user}</td>
+        <td className="border-t py-3 text-sm">{product.addedQty}</td>
+        <td className="border-t py-3 text-sm">{product.crateDate}</td>
       </tr>
     );
   });
@@ -177,44 +133,34 @@ const Products = () => {
       <Navbar />
       <div className="w-full flex">
         {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
-          <h1 className="text-xl tracking-widest">sidebar</h1>
+        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center ">
+          <h1 className="text-xl tracking-wide">sidebar</h1>
         </div>
-        {/* products page main parent*/}
+        {/* stock control page parent */}
         <div className="bg-[#202124] w-full">
           {/* adopt parent */}
           <div className="mx-7">
-            {/* title and btns */}
-            <div className="flex justify-between items-center  mt-5">
+            {/* title */}
+            <div className="mt-5">
               {/* title */}
-              <div className="text-white mb-5">
+              <div className="text-white mb-5 ">
                 <h1 className="text-2xl tracking-wide pb-1 font-semibold">
-                  Products
+                  Stock Control
                 </h1>
-                <p className="text-gray-400 ">Inventory / Products</p>
-              </div>
-              {/* btns */}
-              <div className="flex items-center gap-5">
-                <button className="text-blue-400 rounded border border-blue-400 px-2 py-1">
-                  Go to Shop
-                </button>
-                <button className="flex items-center px-2 py-1 bg-blue-400 rounded text-black">
-                  <AiOutlinePlus />
-                  Add Product
-                </button>
+                <p className="text-gray-400">Inventory / Stock Control</p>
               </div>
             </div>
 
             {/* search n filters n icons */}
-            <h1 className="text-3xl font-semibold ">Products Overview</h1>
+            <h1 className="text-3xl font-semibold">Products Overview</h1>
             {/*  */}
             <div className="mt-3 flex justify-between">
               {/* search box */}
               <div className="">
                 <input
                   type="search"
-                  placeholder="Search"
                   className="rounded-lg py-2 bg-[#202124] px-1 outline-none border border-gray-400 text-white"
+                  placeholder="Search"
                 />
               </div>
               {/* filters n icons */}
@@ -230,13 +176,11 @@ const Products = () => {
                   >
                     <option value="default">Last</option>
                     <option value="name">Name</option>
-                    <option value="date">date</option>
+                    <option value="date">Date</option>
                   </select>
                 </div>
                 <div className="">
-                  <label htmlFor="filter" className="text-gray-400">
-                    Filter :
-                  </label>
+                  <label htmlFor="filter">Filter :</label>
                   <select
                     name=""
                     id="filter"
@@ -266,7 +210,7 @@ const Products = () => {
               </div>
             </div>
 
-            {/* pics list and table list */}
+            {/* pics list n table list */}
             {table ? (
               <div className="grid grid-cols-5 gap-5 justify-center mt-5 w-[69rem] mx-auto">
                 {productPics.map((product) => {
@@ -275,21 +219,21 @@ const Products = () => {
               </div>
             ) : (
               <div className="w-[69rem] mt-5 mx-auto">
-                <table className="border w-full border-gray-400">
-                  <thead className="">
+                <table className="border w-full border-gray-400 text-center">
+                  <thead>
                     <tr>
-                      <th className="py-3 px-2 tracking-wide">NO</th>
-                      <th className="py-3 px-2 tracking-wide">NAME</th>
-                      <th className="py-3 px-2 tracking-wide">BRAND</th>
-                      <th className="py-3 px-2 tracking-wide">UNIT</th>
-                      <th className="py-3 px-2 tracking-wide">SALE PRICE</th>
-                      <th className="py-3 px-2 tracking-wide">TOTAL STOCK</th>
+                      <th className="py-3 tracking-wide">NO</th>
+                      <th className="py-3 tracking-wide">PRODUCT NAME</th>
+                      <th className="py-3 tracking-wide">USER NAME</th>
+                      <th className="py-3 tracking-wide">ADDED QUANTITY</th>
+                      <th className="py-3 tracking-wide">CREATED AT</th>
                     </tr>
                   </thead>
-                  <tbody className="">{rows}</tbody>
+                  <tbody>{row}</tbody>
                 </table>
               </div>
             )}
+
             {/* pagination ui */}
             <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-[85%]   ">
               <IoIosArrowBack />
@@ -300,14 +244,9 @@ const Products = () => {
             </div>
           </div>
         </div>
-
-        {/* add brand modal */}
-        <div className="min-h-screen flex items-center justify-center">
-          <AddBrandModal isOpen={modalOpen} onClose={closeModal} />
-        </div>
       </div>
     </>
   );
 };
 
-export default Products;
+export default StockControl;
