@@ -17,6 +17,9 @@ import Products from "../pages/Products";
 import AddProducts from "../pages/AddProducts";
 import StockControl from "../pages/StockControl";
 import ManageBrands from "../pages/ManageBrands";
+import Print from "../pages/Print";
+import BackNav from "../components/BackNav";
+import CheckoutPage from "../pages/CheckoutPage";
 
 const Paths = () => {
   return (
@@ -25,6 +28,9 @@ const Paths = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dashboard/home" element={<HomeOverview />} />
       <Route path="/sale/cashier" element={<Cashier/>} />
+      <Route path="/sale/cashier/print" element={<Print/>} />
+      <Route path="/sale/cashier/print/checkout" element={<CheckoutPage/>} />
+      <Route path="/sale/cashier" element={<BackNav/>} />
       <Route path="/sale/recent" element={<Recent/>} />
 
       <Route path="/inventory/products" element={<Products/>} />
