@@ -1,27 +1,20 @@
-import React, { useState } from "react";
-import {AiOutlinePlus} from "react-icons/ai"
-import Navbar from "../components/Navbar";
-import User from '../components/User'
-import LogOut from './LogOut'
-import HomeOverview from "./HomeOverview";
-import Sale from "./Sale";
-import Inventory from "./Inventory";
-import Gallery from "./Gallery";
-import UserProfile from "./UserProfile";
-import Table from "../components/Table";
-import Breadcrumbs from "../components/Breadcrumbs";
-import Dashboard from "./Dashboard";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
+
 
 const Overview = () => {
-
-  const [show,setShow] = useState(true);
- 
+  const [show,setShow] = useState(false);
   return (
-    <>
-<Dashboard/>
-
-</>
+   <>
     
+  <div className='w-full'>
+    <div className=""><Dashboard/></div>
+    <div className="container mx-auto">
+    <h1 className="grid grid-cols-1 mt-5 ms-48">Overview</h1>
+    </div>
+</div>
+   </>
   )
 }
 

@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { AiOutlineEdit, AiOutlinePlus } from "react-icons/ai";
 import { BiSolidPhone } from "react-icons/bi";
 import { FaStore } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
+import Dashboard from '../pages/Dashboard';
+
 
 const Edit = () => {
   return (
-    <div>
-      <div className="flex justify-between items-center my-7">
+   <>
+    
+  <div className='w-full'>
+    <Dashboard/>
+    <div className="container mx-auto">
+    <div className="grid grid-cols-1 mt-5 ms-28">
+    <div className="flex justify-between items-center my-7">
         {/* routes */}
         <div className="text-white mb-5">
           <h1 className="text-2xl tracking-wide">Profile</h1>
@@ -150,7 +158,10 @@ const Edit = () => {
         </div>
       </div>
     </div>
-  );
-};
+    </div>
+</div>
+   </>
+  )
+}
 
-export default Edit;
+export default Edit

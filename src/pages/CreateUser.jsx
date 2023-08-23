@@ -1,39 +1,20 @@
-import React from 'react'
-import Breadcrumbs from '../components/Breadcrumbs'
-import User from '../components/User'
-import LogOut from './LogOut'
-import Overview from './Overview'
-import Form from '../components/Form'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
+
 
 const CreateUser = () => {
+  const [show,setShow] = useState(false);
   return (
-<>
-<aside className='w-full flex'>
-      <div className='w-[15%] bg-[#161618] h-screen border-r-[0.5px]'>
-      <User/>
-      <LogOut/>
-   </div>
-   <div className="w-[85%] bg-[#202124]">
-   <div className='bg-[#202124] h-screen pt-5'>
-
-<div className='mx-10  flex justify-between text-white font-[500]'>
-<h1 className='text-xl'>User
-
-</h1>
-{/* Creat User button */}
- <button className='bg-[#8ab4f8] text-[#161618] p-2 flex items-center'>
-      <p className='mx-3'>User List</p>
-  </button>
-{/* Creat User button */}
+   <>
+    
+  <div className='w-full'>
+    <div className=""><Dashboard/></div>
+    <div className="container mx-auto">
+    <h1 className="grid grid-cols-1 mt-5 ms-48">Create User</h1>
+    </div>
 </div>
-<Breadcrumbs/>
-<Form/>
-
-</div>
-   </div>
-    </aside>
-</>
-   
+   </>
   )
 }
 

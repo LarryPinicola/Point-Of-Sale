@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
 import MyAccount from "../components/MyAccount";
 import Edit from "../components/Edit";
 import Navbar from "../components/Navbar";
@@ -20,4 +22,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile

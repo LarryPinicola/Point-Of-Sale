@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
 import MediaUploader from "../components/MediaUploader";
 import MediaUploaded from "../components/MediaUploaded";
 
-const Media = () => {
-  return (
-    <div className="w-full flex">
-      <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center">
-        <h1 className="text-xl tracking-widest">sidebar</h1>
-      </div>
-      <div className="bg-[#202124] px-5 w-full">
-        <MediaUploader />
-        <MediaUploaded/>
-      </div>
-    </div>
-  );
-};
 
-export default Media;
+const Media = () => {
+  const [show,setShow] = useState(false);
+  return (
+   <>
+    
+  <div className='w-full'>
+    <div className=""><Dashboard/></div>
+    <div className="container mx-auto">
+    <div className="grid grid-cols-1 mt-5 ms-48">
+      <MediaUploader/>
+      <MediaUploaded/>
+    </div>
+    </div>
+</div>
+   </>
+  )
+}
+
+export default Media

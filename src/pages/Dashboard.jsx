@@ -42,16 +42,14 @@ const Dashboard = () => {
     </div>
    {
     show2 ?  <ul className="ms-[2.45rem] text-white ">
-   <Link to = "/User/overview">
    <li className='flex items-center pb-5'>
     <RiRecordCircleFill className='text-sm text-[#404048]'/>
-  <Link to="sale/cashier">
+  <Link to="/sale/cashier">
   <p className='ms-[2rem]'>Cashier</p>
   </Link>
     </li>
-   </Link>
 
-      <Link to = "/User/createuser">
+      <Link to = "/sale/recent">
       <li className='flex items-center pb-5'>
       <RiRecordCircleFill className='text-sm text-[#404048]'/>
       <p className='ms-[2rem]'>Recent</p>
@@ -72,31 +70,31 @@ const Dashboard = () => {
 
    {
     show ?  <ul className="ms-[2.45rem] text-white ">
-   <Link to = "/User/overview">
+   <Link to = "/inventory/products">
    <li className='flex items-center pb-5'>
     <RiRecordCircleFill className='text-sm text-[#404048]'/>
-    <p className='ms-[2rem]'>Product</p>
+    <p className='ms-[2rem]'>Products</p>
     </li>
    </Link>
 
-      <Link to = "/User/createuser">
+      <Link to = "/inventory/addproducts">
       <li className='flex items-center pb-5'>
       <RiRecordCircleFill className='text-sm text-[#404048]'/>
-      <p className='ms-[2rem]'>Add Product</p>
+      <p className='ms-[2rem]'>Add Products</p>
       </li>
       </Link>
 
-      <Link to = "/User/createuser">
+      <Link to = "/inventory/stockcontrol">
       <li className='flex items-center pb-5'>
       <RiRecordCircleFill className='text-sm text-[#404048]'/>
-      <p className='ms-[2rem]'>Recent</p>
+      <p className='ms-[2rem]'>Stock Control</p>
       </li>
       </Link>
 
-      <Link to = "/User/createuser">
+      <Link to = "/inventory/managebrands">
       <li className='flex items-center pb-5'>
       <RiRecordCircleFill className='text-sm text-[#404048]'/>
-      <p className='ms-[2rem]'>Recent</p>
+      <p className='ms-[2rem]'>Manage Brands</p>
       </li>
       </Link>
   </ul> : ""
@@ -105,7 +103,7 @@ const Dashboard = () => {
         {/* Inventory */}
 
         {/* User */}
-        <div className='border-b-[0.5px]'>
+    <div className='border-b-[0.5px]'>
       <div className='flex items-center ms-7 text-white py-5'>
       <PiUserCirclePlusBold className='text-2xl'/>
       <h1 className='text-xl ms-5'>User</h1>
@@ -136,7 +134,9 @@ const Dashboard = () => {
         <div className='border-b-[0.5px]'>
           <div className='flex items-center ms-7 text-white py-5'>
             <FcGallery className='text-2xl'/>
+              <Link to = "/media">
             <h1 className='text-xl ms-5'>Media</h1>
+              </Link>
           </div>
         </div>
         {/* </Media> */}
@@ -150,14 +150,14 @@ const Dashboard = () => {
             </div>
    {
     show4 ?  <ul className="ms-[2.45rem] text-white ">
-   <Link to = "/User/overview">
+   <Link to = "/profile/myaccount/information">
    <li className='flex items-center pb-5'>
     <RiRecordCircleFill className='text-sm text-[#404048]'/>
     <p className='ms-[2rem]'>My Account</p>
     </li>
    </Link>
 
-      <Link to = "/User/createuser">
+      <Link to = "/profile/myaccount/edit">
       <li className='flex items-center pb-5'>
       <RiRecordCircleFill className='text-sm text-[#404048]'/>
       <p className='ms-[2rem]'>Edit</p>

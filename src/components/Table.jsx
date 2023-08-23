@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import OverviewDetails from '../pages/OverviewDetails'
 
 const Table = () => {
+
+  const [show,setShow] = useState(true);
  
     const lists = [
         {id : 1 , No : 1 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
