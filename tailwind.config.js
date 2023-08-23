@@ -12,7 +12,11 @@ export default {
       square: 'square',
       roman: 'upper-roman',
     },
-    extend: {},
+    extend: {
+      screens: {
+        
+      },
+    },
   },
   plugins: [],
 }

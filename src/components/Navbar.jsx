@@ -7,9 +7,8 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center p-2 border-b  border-stone-200 ">
       {/* brand name */}
-      <div className="">
+     <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl tracking-tight font-semibold ">VendVortex</h1>
-      </div>
 
       {/* icons */}
       <div className="flex justify-around gap-3 items-center">
@@ -26,6 +25,7 @@ const Navbar = () => {
           <RiAccountCircleLine />
         </div>
       </div>
+     </div>
     </div>
   );
 };
