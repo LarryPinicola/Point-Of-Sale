@@ -4,7 +4,7 @@ import { Stepper } from "@mantine/core";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const AddProducts = () => {
+const AddProductsStepTwo = () => {
   const [active, setActive] = useState(1);
   const nextStep = () =>
     setActive((current) => (current < 3 ? current + 1 : current));
@@ -19,7 +19,7 @@ const AddProducts = () => {
         <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
           <h1 className="text-xl tracking-widest">sidebar</h1>
         </div>
-        {/* add products parent */}
+        {/* step tow parent */}
         <div className="bg-[#202124] w-full">
           {/* adopt parent */}
           <div className="mx-7">
@@ -39,37 +39,14 @@ const AddProducts = () => {
                 </button>
               </div>
             </div>
-            {/* form and stepper */}
+            {/* form n stepper */}
             <div className="mt-6 flex gap-20 items-center">
               {/* form */}
               <div className="border border-gray-400 rounded-lg bg-[#171717] p-5 w-[70%]">
-                <form action="" className=" flex flex-col gap-5">
-                  {/* name */}
+                <form action="" className="flex flex-col gap-5">
                   <div className="flex items-center justify-between px-20">
                     <label htmlFor="" className="text-lg">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Product Name"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
-                  </div>
-                  {/* brand */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Brand
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Brand Name"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
-                  </div>
-                  {/* stock */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Stock
+                      Actual-price
                     </label>
                     <input
                       type="text"
@@ -77,29 +54,15 @@ const AddProducts = () => {
                       className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
                     />
                   </div>
-                  {/* unit */}
                   <div className="flex items-center justify-between px-20">
                     <label htmlFor="" className="text-lg">
-                      Unit
+                      Sale-price
                     </label>
                     <input
                       type="text"
                       placeholder=""
                       className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
                     />
-                  </div>
-                  {/* more info */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      More Info
-                    </label>
-                    <textarea
-                      name=""
-                      id=""
-                      cols=""
-                      rows="5"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a] w-[20.5rem]"
-                    ></textarea>
                   </div>
                 </form>
               </div>
@@ -127,13 +90,15 @@ const AddProducts = () => {
                 </Stepper>
                 {/* submit btns */}
                 <div className="mt-20 flex gap-5">
-                  <button
-                    className="border border-gray-400 text-gray-400 py-1 px-4 rounded"
-                    onClick={prevStep}
-                  >
-                    Back
-                  </button>
                   <Link to={"/addproducts/step2"}>
+                    <button
+                      className="border border-gray-400 text-gray-400 py-1 px-4 rounded"
+                      onClick={prevStep}
+                    >
+                      Back
+                    </button>
+                  </Link>
+                  <Link to={"/addproducts/step3"}>
                     <button
                       className="bg-blue-400 text-black py-1 px-4 rounded"
                       onClick={nextStep}
@@ -151,4 +116,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default AddProductsStepTwo;

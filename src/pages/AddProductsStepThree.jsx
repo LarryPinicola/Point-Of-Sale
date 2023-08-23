@@ -2,14 +2,27 @@ import React from "react";
 import { useState } from "react";
 import { Stepper } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { MdOutlineAddPhotoAlternate } from "react-icons/md";
+import Modal from "../components/Modal";
 import Navbar from "../components/Navbar";
 
-const AddProducts = () => {
+const AddProductsStepThree = () => {
   const [active, setActive] = useState(1);
   const nextStep = () =>
     setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () =>
     setActive((current) => (current > 0 ? current - 1 : current));
+
+  // modal box intention
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
@@ -19,7 +32,7 @@ const AddProducts = () => {
         <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
           <h1 className="text-xl tracking-widest">sidebar</h1>
         </div>
-        {/* add products parent */}
+        {/* step 3 parent */}
         <div className="bg-[#202124] w-full">
           {/* adopt parent */}
           <div className="mx-7">
@@ -39,70 +52,24 @@ const AddProducts = () => {
                 </button>
               </div>
             </div>
-            {/* form and stepper */}
+            {/* upload img n stepper */}
             <div className="mt-6 flex gap-20 items-center">
-              {/* form */}
+              {/* upload section */}
               <div className="border border-gray-400 rounded-lg bg-[#171717] p-5 w-[70%]">
-                <form action="" className=" flex flex-col gap-5">
-                  {/* name */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Product Name"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
+                <div className="flex flex-col items-center gap-16">
+                  <h1 className="">Upload Photo</h1>
+                  <div
+                    className="bg-gray-800 p-14 rounded-full cursor-pointer border-dashed border-blue-400 border"
+                    onClick={openModal}
+                  >
+                    <MdOutlineAddPhotoAlternate className="text-5xl" />
                   </div>
-                  {/* brand */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Brand
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Brand Name"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
-                  </div>
-                  {/* stock */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Stock
-                    </label>
-                    <input
-                      type="text"
-                      placeholder=""
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
-                  </div>
-                  {/* unit */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      Unit
-                    </label>
-                    <input
-                      type="text"
-                      placeholder=""
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a]"
-                    />
-                  </div>
-                  {/* more info */}
-                  <div className="flex items-center justify-between px-20">
-                    <label htmlFor="" className="text-lg">
-                      More Info
-                    </label>
-                    <textarea
-                      name=""
-                      id=""
-                      cols=""
-                      rows="5"
-                      className="outline-none border border-gray-400 rounded p-1 bg-[#1a1a1a] w-[20.5rem]"
-                    ></textarea>
-                  </div>
-                </form>
+                  <button className="bg-blue-400 text-black py-1 px-4 rounded">
+                    Remove
+                  </button>
+                </div>
               </div>
+
               {/* stepper */}
               <div className="flex flex-col items-center">
                 <Stepper
@@ -127,13 +94,15 @@ const AddProducts = () => {
                 </Stepper>
                 {/* submit btns */}
                 <div className="mt-20 flex gap-5">
-                  <button
-                    className="border border-gray-400 text-gray-400 py-1 px-4 rounded"
-                    onClick={prevStep}
-                  >
-                    Back
-                  </button>
                   <Link to={"/addproducts/step2"}>
+                    <button
+                      className="border border-gray-400 text-gray-400 py-1 px-4 rounded"
+                      onClick={prevStep}
+                    >
+                      Back
+                    </button>
+                  </Link>
+                  <Link to={"/"}>
                     <button
                       className="bg-blue-400 text-black py-1 px-4 rounded"
                       onClick={nextStep}
@@ -146,9 +115,14 @@ const AddProducts = () => {
             </div>
           </div>
         </div>
+
+        {/* img uploader modal box */}
+        <div className="min-h-screen flex items-center justify-center">
+          <Modal isOpen={modalOpen} onClose={closeModal} />
+        </div>
       </div>
     </>
   );
 };
 
-export default AddProducts;
+export default AddProductsStepThree;
