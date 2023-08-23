@@ -4,6 +4,8 @@ import { TfiMenuAlt } from "react-icons/tfi";
 import { FiGrid } from "react-icons/fi";
 import ProductsPics from "../components/ProductsPics";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Dashboard from "./Dashboard";
+import Search from "../components/Search";
 
 const StockControl = () => {
   const [table, setTable] = useState(true);
@@ -130,16 +132,15 @@ const StockControl = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="w-full flex">
-        {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center ">
-          <h1 className="text-xl tracking-wide">sidebar</h1>
-        </div>
-        {/* stock control page parent */}
-        <div className="bg-[#202124] w-full">
+<div className='w-full'>
+    <Dashboard/>
+    <div className="container mx-auto">
+      <div className="mt-5 ms-48">
+          
+
+  <div className="bg-[#202124] w-full">
           {/* adopt parent */}
-          <div className="mx-7">
+          <div className="">
             {/* title */}
             <div className="mt-5">
               {/* title */}
@@ -156,13 +157,7 @@ const StockControl = () => {
             {/*  */}
             <div className="mt-3 flex justify-between">
               {/* search box */}
-              <div className="">
-                <input
-                  type="search"
-                  className="rounded-lg py-2 bg-[#202124] px-1 outline-none border border-gray-400 text-white"
-                  placeholder="Search"
-                />
-              </div>
+             <Search/>
               {/* filters n icons */}
               <div className="flex items-center gap-5">
                 <div className="">
@@ -212,7 +207,7 @@ const StockControl = () => {
 
             {/* pics list n table list */}
             {table ? (
-              <div className="grid grid-cols-5 gap-5 justify-center mt-5 w-[69rem] mx-auto">
+              <div className="grid grid-cols-5 gap-5 justify-center mt-5 mx-auto">
                 {productPics.map((product) => {
                   return <ProductsPics key={product.id} pd={product} />;
                 })}
@@ -245,6 +240,10 @@ const StockControl = () => {
           </div>
         </div>
       </div>
+    </div>
+</div>
+        {/* stock control page parent */}
+      
     </>
   );
 };

@@ -107,7 +107,7 @@ const MediaUploaded = () => {
       {/* ************************************************************************************************** */}
 
       {list ? (
-        <div className="flex gap-5 justify-center">
+        <div className="flex gap-5 justify-between">
           {pics.map((pic) => (
             <UploadedPics key={pic.id} pic={pic} />
           ))}
@@ -163,7 +163,7 @@ const MediaUploaded = () => {
       )}
 
       {/* pagination sketch */}
-      <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-[85%]">
+      <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
         <IoIosArrowBack />
         <p className="">1</p>
         <p className="">2</p>

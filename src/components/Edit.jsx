@@ -14,7 +14,7 @@ const Edit = () => {
   <div className='w-full'>
     <Dashboard/>
     <div className="container mx-auto">
-    <div className="grid grid-cols-1 mt-5 ms-28">
+    <div className="mt-5 ms-48">
     <div className="flex justify-between items-center my-7">
         {/* routes */}
         <div className="text-white mb-5">
@@ -30,7 +30,23 @@ const Edit = () => {
           </button>
         </div>
       </div>
-      <div className="bg-[#171717] p-16 mt-16 w-[84vw] h-[35vh] relative">
+      <div className="flex justify-around items-center relative top-[142px] lg:left-[27px] 2xl:left-[-42px] z-10">
+          <div className="">
+            <h1 className="text-2xl tracking-wide">Ethan James</h1>
+            <p className="text-gray-400 text-sm">
+              Sale Executive / Active in previous life
+            </p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <div className="text-lg p-1 rounded-full bg-gray-800">
+              <GoHome />
+            </div>
+            <div className="text-lg p-1 rounded-full bg-gray-800">
+              <BiSolidPhone />
+            </div>
+          </div>
+        </div>
+      <div className="bg-[#171717] p-16 mt-16 h-[35vh] relative">
         {/* profile pic */}
         <div className="">
           <div className="absolute top-[-50px]">
@@ -46,22 +62,6 @@ const Edit = () => {
           </div>
         </div>
         {/* name and icons */}
-        <div className="flex justify-between items-center relative top-[-70%]">
-          <div className="ms-36">
-            <h1 className="text-2xl tracking-wide">Ethan James</h1>
-            <p className="text-gray-400 text-sm">
-              Sale Executive / Active in previous life
-            </p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <div className="text-lg p-1 rounded-full bg-gray-800">
-              <GoHome />
-            </div>
-            <div className="text-lg p-1 rounded-full bg-gray-800">
-              <BiSolidPhone />
-            </div>
-          </div>
-        </div>
         {/* sections */}
         <div className="flex gap-8 mt-7">
           {/* personal */}
@@ -94,7 +94,7 @@ const Edit = () => {
         </div>
       </div>
       {/* form */}
-      <div className="border-t border-gray-500 bg-[#1A1A1A] w-[84vw] ">
+      <div className="border-t border-gray-500 bg-[#1A1A1A] ">
         <form action="" className="flex flex-col gap-5 mt-7 ms-16 ">
           <div className="">
             <label htmlFor="" className="me-[8rem]">

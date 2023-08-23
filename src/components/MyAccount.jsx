@@ -18,7 +18,7 @@ const MyAccount = () => {
   return (
     <div>
       {/* profile nav */}
-      <div className="flex justify-between items-center my-7">
+      <div className="flex justify-between items-center mt-7">
         {/* routes */}
         <div className="text-white mb-5">
           <h1 className="text-2xl font-semibold pb-1">Profile</h1>
@@ -35,7 +35,7 @@ const MyAccount = () => {
       </div>
       {/* myAcc information */}
       {/* above section */}
-      <div className="bg-[#171717] p-16 mt-16 w-[84vw] h-[20vh] relative">
+      <div className="bg-[#171717] p-16 h-[20vh] relative">
         {/* profile pic */}
         <div className="">
           <div className="absolute top-[-50px]">

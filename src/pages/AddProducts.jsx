@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { Stepper } from "@mantine/core";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Dashboard from "./Dashboard";
+import { Stepper } from "@mantine/core";
 
 const AddProducts = () => {
   const [active, setActive] = useState(1);
@@ -13,16 +13,13 @@ const AddProducts = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="w-full flex">
-        {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
-          <h1 className="text-xl tracking-widest">sidebar</h1>
-        </div>
-        {/* add products parent */}
-        <div className="bg-[#202124] w-full">
+  <div className='w-full'>
+  <Dashboard/>
+    <div className="container mx-auto">
+    <div className="mt-5 ms-48">
+    <div className="bg-[#202124] w-full">
           {/* adopt parent */}
-          <div className="mx-7">
+          <div className="">
             {/* title n btn */}
             <div className="flex justify-between items-center  mt-5">
               {/* title */}
@@ -40,7 +37,7 @@ const AddProducts = () => {
               </div>
             </div>
             {/* form and stepper */}
-            <div className="mt-6 flex gap-20 items-center">
+            <div className="mt-6 flex justify-between gap-20 items-center">
               {/* form */}
               <div className="border border-gray-400 rounded-lg bg-[#171717] p-5 w-[70%]">
                 <form action="" className=" flex flex-col gap-5">
@@ -146,7 +143,10 @@ const AddProducts = () => {
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    </div>
+</div>
+
     </>
   );
 };

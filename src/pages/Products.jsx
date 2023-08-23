@@ -10,6 +10,8 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Navbar from "../components/Navbar";
 import AddBrandModal from "../components/AddBrandModal";
 import { Link } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Search from "../components/Search";
 
 const Products = () => {
   const [table, setTable] = useState(true);
@@ -173,15 +175,13 @@ const Products = () => {
   });
 
   return (
-    <>
-      <Navbar />
-      <div className="w-full flex">
-        {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
-          <h1 className="text-xl tracking-widest">sidebar</h1>
-        </div>
-        {/* products page main parent*/}
-        <div className="bg-[#202124] w-full">
+  <div className='w-full'>
+    <Dashboard/>
+    <div className="container mx-auto">
+    <div className="mt-5 ms-48">
+      
+
+ <div className="bg-[#202124] w-full">
           {/* adopt parent */}
           <div className="mx-7">
             {/* title and btns */}
@@ -210,13 +210,7 @@ const Products = () => {
             {/*  */}
             <div className="mt-3 flex justify-between">
               {/* search box */}
-              <div className="">
-                <input
-                  type="search"
-                  placeholder="Search"
-                  className="rounded-lg py-2 bg-[#202124] px-1 outline-none border border-gray-400 text-white"
-                />
-              </div>
+              <Search/>
               {/* filters n icons */}
               <div className="flex items-center gap-5">
                 <div className="">
@@ -268,7 +262,7 @@ const Products = () => {
 
             {/* pics list and table list */}
             {table ? (
-              <div className="grid grid-cols-5 gap-5 justify-center mt-5 w-[69rem] mx-auto">
+              <div className="grid grid-cols-5 gap-5 justify-center mt-5 mx-auto">
                 {productPics.map((product) => {
                   return <ProductsPics key={product.id} pd={product} />;
                 })}
@@ -305,8 +299,9 @@ const Products = () => {
         <div className="min-h-screen flex items-center justify-center">
           <AddBrandModal isOpen={modalOpen} onClose={closeModal} />
         </div>
-      </div>
-    </>
+    </div>
+    </div>
+</div>      
   );
 };
 

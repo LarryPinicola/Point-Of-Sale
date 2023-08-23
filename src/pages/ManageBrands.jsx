@@ -5,6 +5,8 @@ import { BsPencil } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
+import Dashboard from "./Dashboard";
+import Search from "../components/Search";
 
 const ManageBrands = () => {
   const productLists = [
@@ -80,17 +82,14 @@ const ManageBrands = () => {
   });
 
   return (
-    <>
-      <Navbar />
-      <div className="w-full flex">
-        {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center ">
-          <h1 className="text-xl tracking-wide">sidebar</h1>
-        </div>
-        {/* manage brands parent */}
-        <div className="bg-[#202124] w-full">
+<div className='w-full'>
+  <Dashboard/>
+    <div className="container mx-auto">
+      <div className="mt-5 ms-48">
+        
+  <div className="bg-[#202124] w-full">
           {/* adopt parent */}
-          <div className="mx-7">
+          <div className="">
             {/* title n btn */}
             <div className="flex justify-between items-center  mt-5">
               {/* title */}
@@ -113,13 +112,7 @@ const ManageBrands = () => {
             {/*  */}
             <div className="mt-3 flex justify-between">
               {/* search box */}
-              <div className="">
-                <input
-                  type="search"
-                  className="rounded-lg py-2 bg-[#202124] px-1 outline-none border border-gray-400 text-white"
-                  placeholder="Search"
-                />
-              </div>
+          <Search/>
               {/* filters */}
               <div className="flex items-center gap-5">
                 <div className="">
@@ -151,7 +144,7 @@ const ManageBrands = () => {
             </div>
 
             {/* table list */}
-            <div className="w-[69rem] mt-5 mx-auto ">
+            <div className=" mt-5 mx-auto ">
               <table className="border w-full border-gray-400 text-center">
                 <thead>
                   <tr>
@@ -168,7 +161,7 @@ const ManageBrands = () => {
             </div>
 
             {/* pagination ui */}
-            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-[85%]   ">
+            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
               <IoIosArrowBack />
               <p className="">1</p>
               <p className="">2</p>
@@ -267,7 +260,8 @@ const ManageBrands = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
+</div>
   );
 };
 

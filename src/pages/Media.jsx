@@ -13,7 +13,7 @@ const Media = () => {
   <div className='w-full'>
     <div className=""><Dashboard/></div>
     <div className="container mx-auto">
-    <div className="grid grid-cols-1 mt-5 ms-48">
+    <div className="mt-5 ms-48">
       <MediaUploader/>
       <MediaUploaded/>
     </div>

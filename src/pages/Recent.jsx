@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import {BiSearch} from "react-icons/bi"
 import {RiArrowDropDownLine} from "react-icons/ri"
-import {AiOutlineMinusCircle} from "react-icons/ai"
-import {RiEditCircleFill} from "react-icons/ri"
-import {BsArrowRightCircleFill} from "react-icons/bs"
+import {IoIosArrowBack,IoIosArrowForward} from "react-icons/io"
 import Breadcrumbs from '../components/Breadcrumbs';
-import Table from '../components/Table';
+import Search from '../components/Search';
 
 
 const Recent = () => {
@@ -33,10 +31,10 @@ const Recent = () => {
       <h1 className='ms-48 text-2xl'>Sale Overview</h1>
     </div>
     <div className='flex items-center justify-between'>
-    <form className="flex items-center relative me-5 ms-48 mt-3">
-                <input className="bg-[#202124] py-1 px-8 border border-[#3f4245] outline-none font-[500] rounded-md" type="text" placeholder='Search' />
-              <BiSearch className='absolute mx-3'/>
-    </form>
+      {/* SearchInput */}
+    <span className='ms-48'><Search/></span>
+      {/* SearchInput */}
+
       <div className='flex'>
         <p className='text-[#7e7f80]'>Sort : </p> <p>&nbsp;Last</p><RiArrowDropDownLine className='text-2xl text-[#8ab4f8]'/>
         <p className='text-[#7e7f80]'>Filter : </p> <p>&nbsp;All File</p><RiArrowDropDownLine className='text-2xl text-[#8ab4f8]'/>
@@ -128,8 +126,15 @@ const Recent = () => {
     </table>
   </div>
     {/* Table */}
-    <div className='ms-48 mt-10'>
+    <div className='ms-48 mt-28 flex justify-between items-center'>
       <h1>Total sale this month : 1,200,000</h1>
+      <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
+        <IoIosArrowBack />
+        <p className="">1</p>
+        <p className="">2</p>
+        <p className="">3</p>
+        <IoIosArrowForward />
+      </div>
     </div>
     </div>
     
