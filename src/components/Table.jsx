@@ -10,13 +10,13 @@ const Table = () => {
   const [show,setShow] = useState(true);
  
     const lists = [
-        {id : 1 , No : 1 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
-        {id : 2 , No : 2 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
-        {id : 3 , No : 3 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
-        {id : 4 , No : 4 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com"},
+        {id : 1 , No : 1 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com", Createat : "12/03/2023"},
+        {id : 2 , No : 2 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com", Createat : "10/04/2022"},
+        {id : 3 , No : 3 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com", Createat : "07/03/2023"},
+        {id : 4 , No : 4 , Name : "Mauk" , Position : "Admin" , Email : "mgmauktheinkha@gmail.com", Createat : "05/03/2023"},
     ]
   return (
-    <div className='text-white ms-5 pt-16 me-10'>
+    <div className='text-white pt-16'>
     {
       show ?   <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700  border-[0.1px]">
       <thead className=" border-[0.1px]">
@@ -32,6 +32,9 @@ const Table = () => {
           </th>
           <th scope="col" className="py-3.5 text-sm font-normal">
             <span className=''>EMAIL</span>
+          </th>
+          <th scope="col" className="py-3.5 text-sm font-normal">
+            <span className=''>CREATE AT</span>
           </th>
           <th scope="col" className="py-3.5">
             <span className="sr-only">Edit</span>
@@ -59,6 +62,11 @@ const Table = () => {
           <td className="py-4 text-sm whitespace-nowrap text-center">
             <span>
               {list.Email}
+            </span>
+          </td>
+          <td className="py-4 text-sm whitespace-nowrap text-center">
+            <span>
+              {list.Createat}
             </span>
           </td>
           {/* <td className="py-4 text-sm whitespace-nowrap text-center">

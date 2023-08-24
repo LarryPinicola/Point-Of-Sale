@@ -285,7 +285,7 @@ const Products = () => {
               </div>
             )}
             {/* pagination ui */}
-            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-[85%]   ">
+            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
               <IoIosArrowBack />
               <p className="">1</p>
               <p className="">2</p>
@@ -296,7 +296,7 @@ const Products = () => {
         </div>
 
         {/* add brand modal */}
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <AddBrandModal isOpen={modalOpen} onClose={closeModal} />
         </div>
     </div>

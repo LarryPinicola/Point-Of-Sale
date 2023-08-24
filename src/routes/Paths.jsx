@@ -44,14 +44,14 @@ const Paths = () => {
       <Route path="/User/overview" element={<Overview />} />
       <Route path="/User/createuser" element={<CreateUser />} />
       {/* inventory */}
-      <Route path="/products" element={<Products />} />
-      <Route path="/addproducts" element={<AddProducts />} />
+      {/* <Route path="/inventory/products" element={<Products />} />
+      <Route path="/inventory/addproducts" element={<AddProducts />} /> */}
       <Route path="/addproducts/step2" element={<AddProductsStepTwo />} />
       <Route path="/addproducts/step3" element={<AddProductsStepThree />} />
       <Route path="/addproducts/addedproduct" element={<AddedProduct />} />
       <Route path="/products/detail" element={<ProductDetail />} />
-      <Route path="/stockcontrol" element={<StockControl />} />
-      <Route path="/managebrands" element={<ManageBrands />} />
+      {/* <Route path="/inventory/stockcontrol" element={<StockControl />} />
+      <Route path="/inventory/managebrands" element={<ManageBrands />} /> */}
       <Route path="/User/createuser" element={<CreateUser/>} />
 
       <Route path="/media" element={<Media />} />
