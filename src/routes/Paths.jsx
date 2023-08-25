@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import LoginForm from "../pages/LoginForm";
 import LogOut from "../pages/LogOut";
 import Media from "../pages/Media";
 import Profile from "../pages/Profile";
@@ -23,12 +22,14 @@ import StockControl from "../pages/StockControl";
 import Print from "../pages/Print";
 import BackNav from "../components/BackNav";
 import CheckoutPage from "../pages/CheckoutPage";
+import Guard from "../pages/Guard";
+import LoginUi from "../components/LoginUi";
+// import Guard from "../pages/Guard";
 
 const Paths = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginForm />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/" element={<Guard><LoginUi/></Guard>}/>
       <Route path="/dashboard/home" element={<HomeOverview />} />
       <Route path="/sale/cashier" element={<Cashier/>} />
       <Route path="/sale/cashier/print" element={<Print/>} />
