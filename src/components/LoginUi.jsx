@@ -6,17 +6,16 @@ import { Link, NavLink } from "react-router-dom";
 import { useLoginMutation } from "../redux/auth/authApi";
 
 const LoginUi = () => {
-
   // const [email,setEmail] = useState("saw@gmail.com");
   // const [password,setPassword] = useState("1111");
 
-  const {register,handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
   const [login] = useLoginMutation();
 
   const loginHandler = async (user) => {
-    const {data} = await login(user);
+    const { data } = await login(user);
     console.log(data);
-  }
+  };
 
   // const form = useForm({
   //   initialValues: { name: "", email: "" },
@@ -44,7 +43,6 @@ const LoginUi = () => {
   //     await fetchLogin(userData);
   // }
 
-
   return (
     <div className="flex justify-around h-screen items-center bg-[#171717] w-full">
       {/* image section */}
@@ -58,7 +56,10 @@ const LoginUi = () => {
         <h1 className="text-6xl font-semibold mb-10 text-black">vendVortex</h1>
 
         {/* login form */}
-        <form onSubmit={handleSubmit(loginHandler)}  className="flex flex-col gap-2">
+        <form
+          onSubmit={handleSubmit(loginHandler)}
+          className="flex flex-col gap-2"
+        >
           {/* <div className="">
             <TextInput
               className="text-start outline-none"
@@ -85,16 +86,28 @@ const LoginUi = () => {
           </div> */}
           {/* <input className="bg-black" type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} /> */}
           {/* <input className="bg-black" type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} /> */}
-          <input {...register("email")} id='email' className='outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500' type="text" placeholder='Example@email.com' />
-          <input {...register("password")}id="password" className='outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500' type="password" placeholder='Enter your password' />
+          <input
+            {...register("email")}
+            id="email"
+            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500"
+            type="text"
+            placeholder="Example@email.com"
+          />
+          <input
+            {...register("password")}
+            id="password"
+            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500"
+            type="password"
+            placeholder="Enter your password"
+          />
           <Button
             type="submit"
             mt="sm"
             className="bg-gray-800 mt-10 px-8 text-lg"
           >
-          <Link to = "/dashboard/home">
-          Log In
-          </Link>
+            {/* <Link to="/dashboard/home">
+              </Link> */}
+              Log In
           </Button>
         </form>
       </div>
