@@ -1,12 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Navbar from '../components/Navbar';
 import {BiSearch} from "react-icons/bi"
+import Card from '../components/Card';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { useGetproductQuery } from '../redux/Api/productApi';
+import { concat, indexOf } from 'lodash';
 
 
 const Cashier = () => {
-  const [show,setShow] = useState(false);
+
+  // const token = Cookies.get(concat("token"));
+  const token = Cookies.get(("token"));
+  console.log(token);
+
+  const {data} = useGetproductQuery({token});
+  console.log(data);
+   
+
   return (
    <>
    <Navbar/>
@@ -26,70 +39,11 @@ const Cashier = () => {
     <hr className='w-full' />
 
     <div className='grid grid-cols-4 gap-5 mt-5 me-5'>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>       
-      <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">  
-      <div className="px-4 py-2">
-        <h1 className="text-xl font-bold text-gray-800 uppercase dark:text-white">NIKE AIR</h1>
-      </div>
-      <img className="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR" />
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-      </div>
-      </div>
+      {
+       data?.data.map(item=>(
+          <Card key={item.id} item={item}/>  
+        ))
+      }    
     </div>
   </div>
 

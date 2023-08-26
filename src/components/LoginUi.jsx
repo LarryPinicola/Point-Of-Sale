@@ -21,7 +21,7 @@ const LoginUi = () => {
     setIsLoading(false)
     dispatch(addUser({user:data?.user,token:data?.token}))
     if(data?.token){
-      nav("/dashboard/home")
+      nav("/")
     }
     console.log(data);
   }
