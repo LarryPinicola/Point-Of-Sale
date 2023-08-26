@@ -29,8 +29,8 @@ import LoginUi from "../components/LoginUi";
 const Paths = () => {
   return (
     <Routes>
-      <Route path="/" element={<Guard><LoginUi/></Guard>}/>
-      <Route path="/dashboard/home" element={<HomeOverview />} />
+      <Route path="/" element={<Guard><HomeOverview/></Guard>} />
+      <Route path="/login" element={<LoginUi/>}/>
       <Route path="/sale/cashier" element={<Cashier/>} />
       <Route path="/sale/cashier/print" element={<Print/>} />
       <Route path="/sale/cashier/print/checkout" element={<CheckoutPage/>} />

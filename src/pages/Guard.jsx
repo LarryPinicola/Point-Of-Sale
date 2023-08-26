@@ -5,10 +5,11 @@ import {Navigate} from "react-router-dom"
 const Guard = ({children}) => {
   const token = Cookies.get("token");
   console.log(token);
-  if(!token){
+
+  if(token){
     return children
   }else{
-    return <Navigate to="/dashboard/home"/>
+    return <Navigate to="/login"/>
   }
 }
 
