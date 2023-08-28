@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Navbar from '../components/Navbar';
 import {BiSearch} from "react-icons/bi"
 import Card from '../components/Card';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { useGetproductQuery } from '../redux/Api/productApi';
+import { useGetproductQuery, usePaginatePagesQuery } from '../redux/Api/productApi';
 import { concat, indexOf } from 'lodash';
+import Pagination from '../components/Pagination';
 
 
 const Cashier = () => {
 
-  // const token = Cookies.get(concat("token"));
+  //Pagination
+  const [searchParams, setSearchParams] = useSearchParams();
   const token = Cookies.get(("token"));
-  console.log(token);
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(searchParams.get("page")) || 1
+  );
+  const page = searchParams.get("page")
+    ? searchParams.get("page")
+    : currentPage;
+  //Pagination
 
-  const {data} = useGetproductQuery({token});
-  console.log(data);
-   
+  const { data : data } = usePaginatePagesQuery({ token, page }, { skip: false });
+  const products = (data?.data)
+
+  //Pagination
+  const totalPages = Math.ceil(data?.meta?.total / data?.meta?.per_page);
+  //Pagination
 
   return (
    <>
@@ -40,11 +51,19 @@ const Cashier = () => {
 
     <div className='grid grid-cols-4 gap-5 mt-5 me-5'>
       {
-       data?.data.map(item=>(
+       products?.map(item=>(
           <Card key={item.id} item={item}/>  
         ))
       }    
     </div>
+    <Pagination
+  totalPosts={products?.length}
+  totalPages = {totalPages}
+  setCurrentPage={setCurrentPage}
+  currentPage={currentPage}
+  setSearchParams={setSearchParams}
+  searchParams={searchParams}
+/>
   </div>
 
       {/* Cashier Navbar */}
@@ -146,6 +165,9 @@ const Cashier = () => {
         </div>
       </div>
 </div>
+
+
+
    </>
   )
 }
