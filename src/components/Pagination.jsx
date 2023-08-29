@@ -16,23 +16,20 @@ if (totalPages < 10) {
 const isActive = searchParams.get("page");
 
   return (
-    <>
-      <div className="btn-group mt-3 mx-5">
-        <button
-          className="btn"
-          onClick={() => {
-            if (currentPage > 1) {
-              setCurrentPage(currentPage - 1);
-              setSearchParams(`?page=${currentPage - 1}`);
-            }
-          }}
-        >
-          PREV
-        </button>
+    <div className='flex items-center space-x-5 mt-5 justify-center fixed bottom-0 left-[18%]'>
+          <IoIosArrowBack 
+              className=''
+               onClick={() => {
+                if (currentPage > 1) {
+                  setCurrentPage(currentPage - 1);
+                  setSearchParams(`?page=${currentPage - 1}`);
+                }
+              }}
+              />
         {pages?.map((page) => {
           return (
             <button
-              className={` btn ${isActive == page && "bg-blue-700"}`}
+              className={`${isActive == page && "bg-blue-700"} p-5`}
               key={page}
               onClick={() => {
                 setSearchParams(`?page=${page}`);
@@ -44,19 +41,15 @@ const isActive = searchParams.get("page");
           );
         })}
         {/* <p className="btn">page {currentPage}</p> */}
-        <button
-          className="btn"
-          onClick={() => {
-            if (currentPage < totalPages) {
-              setCurrentPage(currentPage + 1);
-              setSearchParams(`?page=${currentPage + 1}`);
-            }
-          }}
-        >
-          NEXT
-        </button>
-      </div>
-    </>
+        <IoIosArrowForward 
+               onClick={() => {
+                if (currentPage < totalPages) {
+                  setCurrentPage(currentPage + 1);
+                  setSearchParams(`?page=${currentPage + 1}`);
+                }
+              }}
+              />
+    </div>
   )
 }
 
