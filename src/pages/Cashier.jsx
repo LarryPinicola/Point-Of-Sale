@@ -44,6 +44,10 @@ const Cashier = () => {
     },
   ];
 
+  const ACTIONS ={
+    ADD_DIGIT: "add-digit",
+  }
+
   return (
     <>
       <Navbar />
