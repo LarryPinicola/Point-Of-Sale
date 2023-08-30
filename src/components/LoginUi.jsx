@@ -1,19 +1,32 @@
 import { Button, TextInput } from "@mantine/core";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, NavLink } from "react-router-dom";
+import {ImSpinner2} from "react-icons/im"
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../redux/auth/authApi";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/auth/authSlice";
 
 const LoginUi = () => {
   // const [email,setEmail] = useState("saw@gmail.com");
   // const [password,setPassword] = useState("1111");
 
-  const { register, handleSubmit } = useForm();
+  const [isLoading,setIsLoading] = useState(false);
+  const {register,handleSubmit} = useForm();
   const [login] = useLoginMutation();
+  const dispatch = useDispatch();
+  const nav = useNavigate();
+
 
   const loginHandler = async (user) => {
     const { data } = await login(user);
+    setIsLoading(true)
+    const {data} = await login(user);
+    setIsLoading(false)
+    dispatch(addUser({user:data?.user,token:data?.token}))
+    if(data?.token){
+      nav("/")
+    }
     console.log(data);
   };
 
@@ -101,14 +114,19 @@ const LoginUi = () => {
             placeholder="Enter your password"
           />
           <Button
+        <form onSubmit={handleSubmit(loginHandler)}  className="flex flex-col gap-2">
+          <input {...register("email")} id='email' className='outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500' type="text" placeholder='Example@email.com' />
+          <input {...register("password")}id="password" className='outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500' type="password" placeholder='Enter your password' />
+        <button
             type="submit"
             mt="sm"
-            className="bg-gray-800 mt-10 px-8 text-lg"
+            className={`bg-gray-800 mt-3 px-8 text-lg py-4 ${isLoading && "btn-disabled"}`}
           >
-            {/* <Link to="/dashboard/home">
-              </Link> */}
-              Log In
-          </Button>
+           {
+            isLoading ? <ImSpinner2 className='animate-spin mx-auto w-5 h-5'/> : "Login"
+           }
+          
+          </button>
         </form>
       </div>
     </div>

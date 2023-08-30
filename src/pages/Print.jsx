@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import BackNav from '../components/BackNav'
 import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { useGetproductQuery } from '../redux/Api/productApi'
 
 const Print = () => {
+  const token = Cookies.get("token");
+  console.log(token);
+
+  const printOut = () => {
+    const {data} = useGetproductQuery({token})
+    console.log(data);
+  } 
+
+
   return (
     <div>
         <Navbar/>
@@ -69,11 +80,9 @@ const Print = () => {
           <p>Total - 400,000</p>
           <p className='text-sm text-[#e8eaed]'>Tax-400</p>
         </div>
-       <Link to = "/sale/cashier/print/checkout">
        <button className='bg-[#8ab4f8] text-[#202124] font-[500] p-2 w-[50%] block mx-auto mt-20 rounded-xl'>
             Print
         </button>
-       </Link>
             </div>
         </div>
     </div>

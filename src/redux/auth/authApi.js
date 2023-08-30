@@ -3,7 +3,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const authApi = createApi({
     reducerPath : 'authApi',
     baseQuery:fetchBaseQuery({
-        baseUrl : "https://a.mmsdev.site/api/v1"
+        // baseUrl : "https://contact-app.mmsdev.site/api/v1/"
+        baseUrl : "https://a.mmsdev.site/api/v1/"
+        // baseUrl : "http://192.168.0.168:8000/api/v1/"
     }),
     tagTypes:["authApi"],
 
@@ -16,7 +18,15 @@ export const authApi = createApi({
             }),
             invalidatesTags:["authApi"]
         }),
+        logout:builder.mutation({
+            query:(token) => ({
+                url : "user-logout",
+                method:"POST",
+                headers:{authorization : `Bearer ${token}`}
+            }),
+            invalidatesTags:["authApi"]
+        })
     })
 })
 
-export const {useLoginMutation} = authApi
+export const {useLoginMutation,useLogoutMutation} = authApi
