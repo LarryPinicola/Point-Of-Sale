@@ -5,7 +5,7 @@ export const authApi = createApi({
     baseQuery:fetchBaseQuery({
         // baseUrl : "https://contact-app.mmsdev.site/api/v1/"
         baseUrl : "https://a.mmsdev.site/api/v1/"
-        // baseUrl : "http://192.168.0.175:8000/api/v1/"
+        // baseUrl : "http://192.168.0.168:8000/api/v1/"
     }),
     tagTypes:["authApi"],
 

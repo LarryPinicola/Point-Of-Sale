@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center p-2 border-b  border-stone-200 ">
       {/* brand name */}
-     <div className="container mx-auto flex justify-between items-center">
+     <div className="w-full flex justify-between items-center px-5">
         <h1 className="text-2xl tracking-tight font-semibold ">VendVortex</h1>
 
       {/* icons */}

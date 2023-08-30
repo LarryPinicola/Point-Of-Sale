@@ -1,33 +1,54 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Navbar from '../components/Navbar';
 import {BiSearch} from "react-icons/bi"
 import Card from '../components/Card';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { useGetproductQuery } from '../redux/Api/productApi';
+import { useGetproductQuery, usePaginatePagesQuery } from '../redux/Api/productApi';
 import { concat, indexOf } from 'lodash';
+import Pagination from '../components/Pagination';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/Service/cartSlice';
 
 
 const Cashier = () => {
+  const carts = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+  console.log(carts[0]?.id);
 
-  // const token = Cookies.get(concat("token"));
+  const isActive = carts.includes(carts.id);
+  console.log(isActive);
+
+
+  //Pagination
+  const [searchParams, setSearchParams] = useSearchParams();
   const token = Cookies.get(("token"));
-  console.log(token);
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(searchParams.get("page")) || 1
+  );
+  const page = searchParams.get("page")
+    ? searchParams.get("page")
+    : currentPage;
+  //Pagination
 
-  const {data} = useGetproductQuery({token});
-  console.log(data);
-   
+  const { data : data } = usePaginatePagesQuery({ token, page }, { skip: false });
+  const products = (data?.data)
+
+  //Pagination
+  const totalPages = Math.ceil(data?.meta?.total / data?.meta?.per_page);
+  //Pagination
+
 
   return (
    <>
    <Navbar/>
-<div className=" flex justify-between w-full container mx-auto h-screen">
+<div className=" flex justify-between w-full h-screen">
       {/* Cashier Navbar */}
    
    <div className="w-[70%] border-r-2">
-           <div className="flex justify-between items-center my-5">
+           <div className="flex justify-between items-center my-5 px-5">
               <h1 className="grid grid-cols-1">Sale/Cashier/&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;Drink
                   &nbsp;&nbsp;&nbsp;Coffee&nbsp;&nbsp;&nbsp;Dessert&nbsp;&nbsp;&nbsp;Set
               </h1>
@@ -38,65 +59,36 @@ const Cashier = () => {
       </div>
     <hr className='w-full' />
 
-    <div className='grid grid-cols-4 gap-5 mt-5 me-5'>
+    <div className='grid grid-cols-4 gap-2 mt-5 px-5'>
       {
-       data?.data.map(item=>(
-          <Card key={item.id} item={item}/>  
+       products?.map(item=>(
+          <Card key={item.id} item={item} dispatch={dispatch}/>  
         ))
       }    
     </div>
+    <Pagination
+  totalPages = {totalPages}
+  setCurrentPage={setCurrentPage}
+  currentPage={currentPage}
+  setSearchParams={setSearchParams}
+  searchParams={searchParams}
+/>
   </div>
 
       {/* Cashier Navbar */}
-      <div className='w-[30%] mt-5 ms-5'>
+      <div className='w-[30%] mt-5'>
         <h1 className="text-2xl ms-5">Receive</h1>
-        <ul className="ms-5 mt-5">
+       {
+        carts.map((cart,i)=>(
+          <ul key={cart.id} className={`ms-5 mt-5 ${i == (carts.length-1) &&"bg-slate-800 py-3"}`}
+          >
           <div className='border-b'>
             <li className='text-xl'>
-              LipStick
+              {cart.name}
             </li>
            <div className='flex justify-between mb-1'>
            <li className='text-sm text-[#e8eaed]'>
-           ၁ခု ၁၀၀၀ကျပ် 
-            </li>
-            <li className='text-sm'>
-              100,000
-            </li>
-           </div>
-          </div>
-          <div className='border-b'>
-            <li className='text-xl'>
-              LipStick
-            </li>
-           <div className='flex justify-between mb-1'>
-           <li className='text-sm text-[#e8eaed]'>
-           ၁ခု ၁၀၀၀ကျပ် 
-            </li>
-            <li className='text-sm'>
-              100,000
-            </li>
-           </div>
-          </div>
-          <div className='border-b'>
-            <li className='text-xl'>
-              LipStick
-            </li>
-           <div className='flex justify-between mb-1'>
-           <li className='text-sm text-[#e8eaed]'>
-           ၁ခု ၁၀၀၀ကျပ် 
-            </li>
-            <li className='text-sm'>
-              100,000
-            </li>
-           </div>
-          </div>
-          <div className='border-b'>
-            <li className='text-xl'>
-              LipStick
-            </li>
-           <div className='flex justify-between mb-1'>
-           <li className='text-sm text-[#e8eaed]'>
-           ၁ခု ၁၀၀၀ကျပ် 
+          ၁ခု ၁၀၀၀ကျပ် 
             </li>
             <li className='text-sm'>
               100,000
@@ -104,11 +96,14 @@ const Cashier = () => {
            </div>
           </div>
         </ul>
-        <div className='text-end mt-28'>
-          <p>Total - 400,000</p>
-          <p className='text-sm text-[#e8eaed]'>Tax-400</p>
-        </div>
-        <div className=''>
+        ))
+       }
+       <div className='text-end mt-28 fixed right-0 bottom-[310px]'>
+        <p>Total - 400,000</p>
+        <p className='text-sm text-[#e8eaed]'>Tax-400</p>
+      </div>
+        
+        <div className='fixed bottom-0 w-[30%]'>
         <div className='grid grid-cols-3 mt-1 bg-[#202124]'>
           <p className='border-[#3f4245] border-2 py-3'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;Note</p>
           <p className='border-[#3f4245] border-2 py-3'>&nbsp;&nbsp;&nbsp;Note</p>
@@ -146,6 +141,9 @@ const Cashier = () => {
         </div>
       </div>
 </div>
+
+
+
    </>
   )
 }

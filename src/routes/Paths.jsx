@@ -33,7 +33,7 @@ const Paths = () => {
       <Route path="/login" element={<LoginUi/>}/>
       <Route path="/sale/cashier" element={<Cashier/>} />
       <Route path="/sale/cashier/print" element={<Print/>} />
-      <Route path="/sale/cashier/print/checkout" element={<CheckoutPage/>} />
+      {/* <Route path="/sale/cashier/print/checkout" element={<CheckoutPage/>} /> */}
       <Route path="/sale/cashier" element={<BackNav/>} />
       <Route path="/sale/recent" element={<Recent/>} />
 
