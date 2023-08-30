@@ -41,6 +41,7 @@ const Cashier = () => {
   //Pagination
 
 
+
   return (
    <>
    <Navbar/>
@@ -88,7 +89,7 @@ const Cashier = () => {
             </li>
            <div className='flex justify-between mb-1'>
            <li className='text-sm text-[#e8eaed]'>
-          ၁ခု ၁၀၀၀ကျပ် 
+          1ku 1000ks 
             </li>
             <li className='text-sm'>
               100,000
@@ -104,41 +105,83 @@ const Cashier = () => {
       </div>
         
         <div className='fixed bottom-0 w-[30%]'>
-        <div className='grid grid-cols-3 mt-1 bg-[#202124]'>
-          <p className='border-[#3f4245] border-2 py-3'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;Note</p>
-          <p className='border-[#3f4245] border-2 py-3'>&nbsp;&nbsp;&nbsp;Note</p>
-          <p className='border-[#3f4245] border-2 py-3'>&nbsp;&nbsp;&nbsp;Note</p>
-        </div>
-        <div className='grid grid-cols-4 bg-[#202124]'>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>1</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>2</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>3</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center bg-[#d7dae0] text-[#3f4245]'>Qty</p>
-        </div>
-        <div className='grid grid-cols-4 bg-[#202124]'>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>4</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>5</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>6</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>DIS</p>
-        </div>
-        <div className='grid grid-cols-4 bg-[#202124]'>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>7</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>8</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>9</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>PRICE</p>
-        </div>
-        <div className='grid grid-cols-4 bg-[#202124]'>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>+/-</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>0</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>.</p>
-          <p className='border-[#3f4245] border-2 py-3 text-center'>X</p>
-        </div>
-        <div className='grid grid-cols-1'>
-          <Link to= "/sale/cashier/print">
-          <p className='border-[#3f4245] border-2 py-3 text-center font-[500] text-[#8ab4f8]'>Payment</p>
-          </Link>
-        </div>
-        </div>
+        <div className="">
+            <div className="grid grid-cols-3 mt-1 bg-[#202124]">
+              <p className="border-[#3f4245] border-2 py-3">
+                &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;Note
+              </p>
+              <p className="border-[#3f4245] border-2 py-3">
+                &nbsp;&nbsp;&nbsp;Note
+              </p>
+              <p className="border-[#3f4245] border-2 py-3">
+                &nbsp;&nbsp;&nbsp;Note
+              </p>
+            </div>
+            <div className="grid grid-cols-4 bg-[#202124]">
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                1
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                2
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                3
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out bg-[#d7dae0] text-[#3f4245]">
+                Qty
+              </p>
+            </div>
+            <div className="grid grid-cols-4 bg-[#202124]">
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                4
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                5
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                6
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                DIS
+              </p>
+            </div>
+            <div className="grid grid-cols-4 bg-[#202124]">
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                7
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                8
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                9
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                PRICE
+              </p>
+            </div>
+            <div className="grid grid-cols-4 bg-[#202124]">
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                +/-
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                0
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                .
+              </p>
+              <p className="border-[#3f4245] border-2 py-3 text-center cursor-pointer active:bg-gray-600 duration-300 ease-in-out">
+                X
+              </p>
+            </div>
+            <div className="grid grid-cols-1">
+              <Link to="/sale/cashier/print">
+                <p className="border-[#3f4245] border-2 py-3 text-center font-[500] text-[#8ab4f8]">
+                  Payment
+                </p>
+              </Link>
+            </div>
+          </div>
+      </div>
       </div>
 </div>
 
