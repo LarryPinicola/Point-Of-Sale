@@ -19,8 +19,8 @@ export const productApi = createApi({
             providesTags:["productApi"]
         }),
         paginatePages: builder.query({
-            query: ({ token, page }) => ({
-              url: `user/product?page=${page}`,
+            query: ({ token, page}) => ({
+              url: `user/product?$page=${page}`,
               headers: { authorization: ` Bearer ${token}` },
             }),
             providesTags: ["productApi"],

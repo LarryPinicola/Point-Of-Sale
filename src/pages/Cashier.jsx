@@ -16,10 +16,8 @@ import { addToCart } from '../redux/Service/cartSlice';
 const Cashier = () => {
   const carts = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
-  console.log(carts[0]?.id);
+  console.log(carts);
 
-  const isActive = carts.includes(carts.id);
-  console.log(isActive);
 
 
   //Pagination
@@ -34,7 +32,7 @@ const Cashier = () => {
   //Pagination
 
   const { data : data } = usePaginatePagesQuery({ token, page }, { skip: false });
-  const products = (data?.data)
+  const products = (data?.data);
 
   //Pagination
   const totalPages = Math.ceil(data?.meta?.total / data?.meta?.per_page);
@@ -62,7 +60,7 @@ const Cashier = () => {
 
     <div className='grid grid-cols-4 gap-2 mt-5 px-5'>
       {
-       products?.map(item=>(
+       data?.data?.map(item=>(
           <Card key={item.id} item={item} dispatch={dispatch}/>  
         ))
       }    
@@ -85,11 +83,11 @@ const Cashier = () => {
           >
           <div className='border-b'>
             <li className='text-xl'>
-              {cart.name}
+              {cart.id}
             </li>
            <div className='flex justify-between mb-1'>
            <li className='text-sm text-[#e8eaed]'>
-          1ku 1000ks 
+          1ku {cart.sales_price}Ks 
             </li>
             <li className='text-sm'>
               100,000
