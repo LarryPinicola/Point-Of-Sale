@@ -47,14 +47,14 @@ const LoginUi = () => {
           <input
             {...register("email")}
             id="email"
-            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500"
+            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-black"
             type="text"
             placeholder="Example@email.com"
           />
           <input
             {...register("password")}
             id="password"
-            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-violet-500"
+            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-black"
             type="password"
             placeholder="Enter your password"
           />
