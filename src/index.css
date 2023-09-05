@@ -12,7 +12,10 @@
 }
 
 body{
-  background-color: #202121;
+  background-image: url('https://w0.peakpx.com/wallpaper/875/835/HD-wallpaper-anime-original-supermarket.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
 }
 

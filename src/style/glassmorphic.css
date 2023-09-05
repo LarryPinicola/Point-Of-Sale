@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumar+One+Outline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap");
+
+.glassmorphic {
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 30px solid rgba(255, 255, 255, 0.726);
+  transform: rotate(34deg);
+}
+
+.youAgain {
+  animation: You 2s ease-in forwards;
+}
+
+@keyframes You {
+  0%,
+  11.99% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    display: none;
+  }
+
+  12%,
+  32.99% {
+    display: block;
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    font-size: 15px;
+    transform: rotate(-5deg);
+  }
+  33%,
+  53.99% {
+    transform: rotate(5deg);
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    font-size: 20px;
+  }
+  54%,
+  74.99% {
+    transform: rotate(0deg);
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    font-size: 25px;
+  }
+  75%,
+  98.99% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    font-size: 25px;
+  }
+  99%,
+  100% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    font-size: 25px;
+    display: none;
+  }
+}
+
+.sigh {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: Sigh 5s steps(15) forwards;
+}
+
+@keyframes Sigh {
+  0% {
+    width: 0px;
+    display: none;
+  }
+
+  25% {
+    width: 0px;
+    display: none;
+  }
+
+  45% {
+    width: 0px;
+    display: none;
+  }
+
+  65% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+    display: block;
+  }
+  90%,
+  100% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+    display: none;
+  }
+}
+
+.wb {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: wel 5s steps(40) forwards;
+}
+
+@keyframes wel {
+  0% {
+    width: 0px;
+    display: none;
+  }
+
+  25% {
+    width: 0px;
+    display: none;
+  }
+
+  45% {
+    width: 0%;
+    display: none;
+  }
+
+  60% {
+    width: 0%;
+  }
+
+  75% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+    display: block;
+  }
+
+  90%,
+  100% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+    display: none;
+  }
+}
+
+.wdyn {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: what 8s steps(50) forwards;
+}
+
+@keyframes what {
+  0% {
+    width: 0px;
+    display: none;
+  }
+
+  25% {
+    width: 0px;
+    display: none;
+  }
+
+  45% {
+    width: 0%;
+    display: none;
+  }
+
+  60% {
+    width: 0%;
+    display: none;
+  }
+
+  70% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+    display: block;
+  }
+
+  100% {
+    text-shadow: 0 0 100px #ffffff, 0px 0px 3px #672105, 0 0 50px #ff0000;
+    width: 100%;
+  }
+}
+
+.mmsFont {
+  font-family: "Genos", sans-serif;
+  text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+  animation: lower 4s linear forwards;
+}
+@keyframes lower {
+  0%,
+  31.999% {
+    opacity: 0;
+  }
+  32%,
+  37%,
+  44.999%,
+  46%,
+  49.999%,
+  51%,
+  58.999%,
+  61%,
+  68.999%,
+  71%,
+  85.999%,
+  96%,
+  100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+  }
+  19%,
+  22.99%,
+  32%,
+  36.999%,
+  45%,
+  45.999%,
+  50%,
+  50.99%,
+  59%,
+  60.999%,
+  69%,
+  70.999%,
+  86%,
+  95.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+.dk {
+  font-family: "Homemade Apple", cursive;
+  text-shadow: 0 0 80px #36baf7, 0 0 15px #2481ac, 0 0 6px #006a9e;
+  animation: upper 4s linear forwards;
+}
+@keyframes upper {
+  0%, 34.99% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+}
+
+.bc {
+  text-shadow: 0 0 100px #ffffff, 0 0 8px #b7b7b7, 0 0 6px gray;
+  animation: clr 3.5s linear infinite;
+}
+
+@keyframes clr {
+  0% {
+    border-left: 2px orangered solid;
+    border-top: 2px red solid;
+    border-right: 2px firebrick solid;
+    border-bottom: 2px orange solid;
+  }
+  25% {
+    border-left: 2px orange solid;
+    border-top: 2px orangered solid;
+    border-right: 2px red solid;
+    border-bottom: 2px firebrick solid;
+  }
+  50% {
+    border-left: 2px firebrick solid;
+    border-top: 2px orange solid;
+    border-right: 2px orangered solid;
+    border-bottom: 2px red solid;
+  }
+  75% {
+    border-left: 2px red solid;
+    border-top: 2px firebrick solid;
+    border-right: 2px orange solid;
+    border-bottom: 2px orangered solid;
+  }
+  100% {
+    border-left: 2px orangered solid;
+    border-top: 2px red solid;
+    border-right: 2px firebrick solid;
+    border-bottom: 2px orange solid;
+  }
+}
+
+.calBdr {
+  text-shadow: 0 0 100px #ffffff, 0 0 8px #b7b7b7, 0 0 6px gray;
+  animation: calR 3.5s linear infinite alternate;
+}
+
+@keyframes calR {
+  0% {
+    border-left: 2px orangered solid;
+    border-top: 2px red solid;
+    border-right: 2px firebrick solid;
+    border-bottom: 2px orange solid;
+  }
+  25% {
+    border-left: 2px orange solid;
+    border-top: 2px orangered solid;
+    border-right: 2px red solid;
+    border-bottom: 2px firebrick solid;
+  }
+  50% {
+    border-left: 2px firebrick solid;
+    border-top: 2px orange solid;
+    border-right: 2px orangered solid;
+    border-bottom: 2px red solid;
+  }
+  75% {
+    border-left: 2px red solid;
+    border-top: 2px firebrick solid;
+    border-right: 2px orange solid;
+    border-bottom: 2px orangered solid;
+  }
+  100% {
+    border-left: 2px orangered solid;
+    border-top: 2px red solid;
+    border-right: 2px firebrick solid;
+    border-bottom: 2px orange solid;
+  }
+}
+
+.txFt {
+  font-family: "Rouge Script", cursive;
+  text-shadow: 0 0 80px #36baf7, 0 0 15px #2481ac, 0 0 6px #006a9e;
+}
+
+.btFt {
+  font-family: "Kumar One Outline", cursive;
+  text-shadow: 0 0 80px #ffffff, 0 0 15px #000000, 0 0 6px #000000;
+}
+
+.btFt:hover {
+  font-family: "Kumar One Outline", cursive;
+  text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+  animation: clr 3.5s ease-in infinite;
+}
+
+.plhtc {
+  font-family: "Lovers Quarrel", cursive;
+  text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+  animation: moving 10s linear infinite;
+}
+
+@keyframes moving {
+  0% {
+    margin-left: -1000px;
+  }
+  100% {
+    margin-right: -1000px;
+  }
+}
+
+.formAni {
+  animation: 1.3s ease-out 0s 1 forwards spinning;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.jumpAniOne {
+	animation: 2s ease-in-out 0s forwards slideInFromTop;
+  }
+  
+  @keyframes slideInFromTop {
+	0%, 59.99% {
+	  transform: translateY(-15%);
+	  opacity: 0;
+	}
+
+  60%{
+    transform: translateY(-15%);
+	  opacity: 0;
+  }
+	100% {
+	  transform: translateY(0%);
+	  opacity: 1;
+	}
+  }
+
+
+  .inAniOne {
+    animation: 2.5s ease-in-out 0s slideInFromRight;
+    }
+    
+    @keyframes slideInFromRight {
+    0%, 74.99% {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    75% {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    }
+
+    .inAniTwo {
+      animation: 2.5s ease-in-out 0s forwards slideOutToLeft;
+      }
+      
+      @keyframes slideOutToLeft {
+        0%, 74.99% {
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        75% {
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+
+      .upAni {
+        animation: 3s ease-in-out 0s forwards upFromBot;
+        }
+        
+        @keyframes upFromBot {
+        0%, 79.99% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        80% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0%);
+          opacity: 1;
+        }
+        }
+
+        .mmsNav {
+          font-family: "Genos", sans-serif;
+          text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+        }
+
+        .dkNav {
+          font-family: "Homemade Apple", cursive;
+          text-shadow: 0 0 80px #36baf7, 0 0 15px #2481ac, 0 0 6px #006a9e;
+        }
+
+        .blFt {
+          text-shadow: 0 0 80px #ffffff, 0 0 15px #000000, 0 0 6px #000000;
+        }
+
+        .wtFt {
+          text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
+        }
