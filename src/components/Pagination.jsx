@@ -29,7 +29,7 @@ const isActive = searchParams.get("page");
         {pages?.map((page) => {
           return (
             <button
-              className={`${isActive == page && "bg-blue-700"} p-5`}
+              className={`${isActive == page && "bg-[#ff00f219] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer"} p-5`}
               key={page}
               onClick={() => {
                 setSearchParams(`?page=${page}`);

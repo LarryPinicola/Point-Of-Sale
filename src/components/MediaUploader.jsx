@@ -1,5 +1,6 @@
 import React from "react";
 import { FiUploadCloud } from "react-icons/fi";
+import "../style/glassmorphic.css";
 
 const MediaUploader = () => {
   return (
@@ -10,7 +11,7 @@ const MediaUploader = () => {
         <p className="text-gray-400 text-sm">Media / Uploader</p>
       </div>
       {/* upload space */}
-      <div className="bg-[#161618] p-12 flex flex-col gap-5 items-center rounded-lg border border-gray-600">
+      <div className="bg-[#ffffff19] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer p-12 flex flex-col gap-5 items-center rounded-lg border border-gray-600 bc">
         <div className="">
           <div className="text-blue-400">
             <FiUploadCloud className="outline-dashed p-4 text-7xl rounded-full" />
