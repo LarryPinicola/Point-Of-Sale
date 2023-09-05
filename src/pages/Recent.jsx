@@ -1,24 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import { BiSearch } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Breadcrumbs from "../components/Breadcrumbs";
 import Search from "../components/Search";
 import Cookies from "js-cookie";
 import { useGetRecentQuery } from "../redux/Api/RecentApi";
 
 const Recent = () => {
-  try {
-    const token = Cookies.get("token");
-    console.log(token);
-    const { data } = useGetRecentQuery(token);
-
-    console.log(data);
-  } catch (error) {
-    console.log(error, "error");
-  }
+  const token = Cookies.get("token");
+  // console.log(token);
+  const { data } = useGetRecentQuery({ token });
+  console.log(data);
 
   // real time Date
   const currentDate = new Date();
@@ -87,23 +80,19 @@ const Recent = () => {
     },
   ];
 
-  const row = lists.map((list, index) => {
+  const row = data?.map((list, index) => {
     return (
       <tr className="border-[0.1px] text-center " key={index}>
+        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">1</td>
         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-          {list.No}
+          32223
         </td>
         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-          {list.Voucher}
+          {Math.ceil(list.total_cash)}
         </td>
+        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">1.5</td>
         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-          {list.Cash}
-        </td>
-        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-          {list.Tax}
-        </td>
-        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-          {list.Total}
+          {Math.ceil(list.total_cost)}
         </td>
         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
           {date}
@@ -175,8 +164,26 @@ const Recent = () => {
             </table>
           </div>
           {/* Table */}
-          <div className="ms-48 mt-28 flex justify-between items-center">
-            <h1>Total sale this month : 1,200,000</h1>
+          <div className="ms-48 mt-28 flex justify-between items-center ">
+            <table className="border w-[40%] text-center">
+              <thead className="border-b">
+                <tr className="">
+                  <th className="py-1 tracking-wide">Total Vouchers</th>
+                  <th className="py-1 tracking-wide">Total Cash</th>
+                  <th className="py-1 tracking-wide">Total Tax</th>
+                  <th className="py-1 tracking-wide">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-1 tracking-wide">15</td>
+                  <td className="py-1 tracking-wide">4,200,000</td>
+                  <td className="py-1 tracking-wide">10,000</td>
+                  <td className="py-1 tracking-wide">4,210,000</td>
+                </tr>
+              </tbody>
+            </table>
+            {/* pagination */}
             <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
               <IoIosArrowBack />
               <p className="">1</p>

@@ -24,15 +24,14 @@ const Cashier = () => {
   // console.log(isActive);
 
   //Pagination
-  const [searchParams, setSearchParams] = useSearchParams();
   const token = Cookies.get("token");
+  const [searchParams, setSearchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get("page")) || 1
   );
   const page = searchParams.get("page")
     ? searchParams.get("page")
     : currentPage;
-  //Pagination
 
   const { data: data } = usePaginatePagesQuery(
     { token, page },
