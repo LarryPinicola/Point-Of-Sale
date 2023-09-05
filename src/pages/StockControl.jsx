@@ -132,118 +132,115 @@ const StockControl = () => {
 
   return (
     <>
-<div className='w-full'>
-    <Dashboard/>
-    <div className="container mx-auto">
-      <div className="mt-5 ms-48">
-          
-
-  <div className="bg-[#202124] w-full">
-          {/* adopt parent */}
-          <div className="">
-            {/* title */}
-            <div className="mt-5">
-              {/* title */}
-              <div className="text-white mb-5 ">
-                <h1 className="text-2xl tracking-wide pb-1 font-semibold">
-                  Stock Control
-                </h1>
-                <p className="text-gray-400">Inventory / Stock Control</p>
-              </div>
-            </div>
-
-            {/* search n filters n icons */}
-            <h1 className="text-3xl font-semibold">Products Overview</h1>
-            {/*  */}
-            <div className="mt-3 flex justify-between">
-              {/* search box */}
-             <Search/>
-              {/* filters n icons */}
-              <div className="flex items-center gap-5">
-                <div className="">
-                  <label htmlFor="sort" className="text-gray-400">
-                    Sort :
-                  </label>
-                  <select
-                    name=""
-                    id="sort"
-                    className="bg-[#202124] outline-none"
-                  >
-                    <option value="default">Last</option>
-                    <option value="name">Name</option>
-                    <option value="date">Date</option>
-                  </select>
+      <div className="w-full">
+        <Dashboard />
+        <div className="container mx-auto">
+          <div className="mt-5 ms-48">
+            <div className="bg-[#202124] w-full">
+              {/* adopt parent */}
+              <div className="">
+                {/* title */}
+                <div className="mt-5">
+                  {/* title */}
+                  <div className="text-white mb-5 ">
+                    <h1 className="text-2xl tracking-wide pb-1 font-semibold">
+                      Stock Control
+                    </h1>
+                    <p className="text-gray-400">Inventory / Stock Control</p>
+                  </div>
                 </div>
-                <div className="">
-                  <label htmlFor="filter">Filter :</label>
-                  <select
-                    name=""
-                    id="filter"
-                    className="bg-[#202124] outline-none"
-                  >
-                    <option value="default">All Files</option>
-                    <option value="size">Size</option>
-                  </select>
-                </div>
-                {/* icons */}
-                <div className="">
-                  <div className="flex items-center gap-2 border rounded p-1 text-gray-400 border-gray-600">
-                    <div
-                      className="cursor-pointer"
-                      onClick={() => setTable(true)}
-                    >
-                      <FiGrid className="" />
+
+                {/* search n filters n icons */}
+                <h1 className="text-3xl font-semibold">Products Overview</h1>
+                {/*  */}
+                <div className="mt-3 flex justify-between">
+                  {/* search box */}
+                  <Search />
+                  {/* filters n icons */}
+                  <div className="flex items-center gap-5">
+                    <div className="">
+                      <label htmlFor="sort" className="text-gray-400">
+                        Sort :
+                      </label>
+                      <select
+                        name=""
+                        id="sort"
+                        className="bg-[#202124] outline-none"
+                      >
+                        <option value="default">Last</option>
+                        <option value="name">Name</option>
+                        <option value="date">Date</option>
+                      </select>
                     </div>
-                    <div
-                      className="cursor-pointer"
-                      onClick={() => setTable(false)}
-                    >
-                      <TfiMenuAlt className="" />
+                    <div className="">
+                      <label htmlFor="filter">Filter :</label>
+                      <select
+                        name=""
+                        id="filter"
+                        className="bg-[#202124] outline-none"
+                      >
+                        <option value="default">All Files</option>
+                        <option value="size">Size</option>
+                      </select>
+                    </div>
+                    {/* icons */}
+                    <div className="">
+                      <div className="flex items-center gap-2 border rounded p-1 text-gray-400 border-gray-600">
+                        <div
+                          className="cursor-pointer"
+                          onClick={() => setTable(true)}
+                        >
+                          <FiGrid className="" />
+                        </div>
+                        <div
+                          className="cursor-pointer"
+                          onClick={() => setTable(false)}
+                        >
+                          <TfiMenuAlt className="" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* pics list n table list */}
-            {table ? (
-              <div className="grid grid-cols-5 gap-5 justify-center mt-5 mx-auto">
-                {productPics.map((product) => {
-                  return <ProductsPics key={product.id} pd={product} />;
-                })}
-              </div>
-            ) : (
-              <div className="w-[69rem] mt-5 mx-auto">
-                <table className="border w-full border-gray-400 text-center">
-                  <thead>
-                    <tr>
-                      <th className="py-3 tracking-wide">NO</th>
-                      <th className="py-3 tracking-wide">PRODUCT NAME</th>
-                      <th className="py-3 tracking-wide">USER NAME</th>
-                      <th className="py-3 tracking-wide">ADDED QUANTITY</th>
-                      <th className="py-3 tracking-wide">CREATED AT</th>
-                    </tr>
-                  </thead>
-                  <tbody>{row}</tbody>
-                </table>
-              </div>
-            )}
+                {/* pics list n table list */}
+                {table ? (
+                  <div className="grid grid-cols-5 gap-5 justify-center mt-5 mx-auto">
+                    {productPics.map((product) => {
+                      return <ProductsPics key={product.id} pd={product} />;
+                    })}
+                  </div>
+                ) : (
+                  <div className="w-[69rem] mt-5 mx-auto">
+                    <table className="border w-full border-gray-400 text-center">
+                      <thead>
+                        <tr>
+                          <th className="py-3 tracking-wide">NO</th>
+                          <th className="py-3 tracking-wide">PRODUCT NAME</th>
+                          <th className="py-3 tracking-wide">USER NAME</th>
+                          <th className="py-3 tracking-wide">ADDED QUANTITY</th>
+                          <th className="py-3 tracking-wide">CREATED AT</th>
+                        </tr>
+                      </thead>
+                      <tbody>{row}</tbody>
+                    </table>
+                  </div>
+                )}
 
-            {/* pagination ui */}
-            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto   ">
-              <IoIosArrowBack />
-              <p className="">1</p>
-              <p className="">2</p>
-              <p className="">3</p>
-              <IoIosArrowForward />
+                {/* pagination ui */}
+                <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto   ">
+                  <IoIosArrowBack />
+                  <p className="">1</p>
+                  <p className="">2</p>
+                  <p className="">3</p>
+                  <IoIosArrowForward />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-</div>
-        {/* stock control page parent */}
-      
+      {/* stock control page parent */}
     </>
   );
 };
