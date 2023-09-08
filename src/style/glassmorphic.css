@@ -460,3 +460,12 @@
         .wtFt {
           text-shadow: 0 0 80px #ffffff, 0 0 15px #b7b7b7, 0 0 6px gray;
         }
+
+        .beFt {
+          text-shadow: 0 0 80px #36baf7, 0 0 15px #2481ac, 0 0 6px #006a9e;
+        }
+
+        .inputID::placeholder {
+          color: rgba(255, 255, 255, 0.877);
+          opacity: 1;
+      }

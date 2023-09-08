@@ -17,7 +17,7 @@ const AddProducts = () => {
       <div className="w-full">
         <Dashboard />
         <div className="container mx-auto">
-          <div className="mt-5 ms-48">
+          <div className="my-5 ms-48">
             <div className="bg-[#ffffff19] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l rounded-lg cursor-pointer w-full p-10">
               {/* adopt parent */}
               <div className="">

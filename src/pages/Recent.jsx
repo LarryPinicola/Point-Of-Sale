@@ -6,6 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Search from "../components/Search";
 import Cookies from "js-cookie";
 import { useGetRecentQuery } from "../redux/Api/RecentApi";
+import "../style/glassmorphic.css";
 
 const Recent = () => {
   const token = Cookies.get("token");
@@ -105,36 +106,76 @@ const Recent = () => {
   });
   return (
     <>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden w-full">
         <Dashboard />
         <div className="container mx-auto ">
-          <div className="flex items-center justify-between mt-5">
-            <h1 className="grid grid-cols-1 ms-48 text-xl">Recent</h1>
-            <button className="bg-[#8ab4f8] text-[#161618] p-2 flex items-center rounded-md font-[600]">
+          <div className="flex items-center justify-between mt-14">
+            <h1 className="grid grid-cols-1 ms-48 text-2xl tracking-wide pb-1 font-semibold blFt">
+              Recent
+            </h1>
+            <button className="flex items-center px-2 py-[7px] bg-blue-400 rounded text-white blFt">
               <p className="mx-3">Go To Shop</p>
             </button>
           </div>
 
-          <div className="mt-16">
-            <h1 className="ms-48 text-2xl">Sale Overview</h1>
+          <div className="mt-10">
+            <h1 className="ms-48 text-3xl tracking-wide pb-1 font-semibold blFt">
+              Sale Overview
+            </h1>
           </div>
           <div className="flex items-center justify-between">
             {/* SearchInput */}
-            <span className="ms-48">
+            <span className="ms-48 mt-2">
               <Search />
             </span>
             {/* SearchInput */}
 
-            <div className="flex">
-              <p className="text-[#7e7f80]">Sort : </p> <p>&nbsp;Last</p>
-              <RiArrowDropDownLine className="text-2xl text-[#8ab4f8]" />
-              <p className="text-[#7e7f80]">Filter : </p> <p>&nbsp;All File</p>
-              <RiArrowDropDownLine className="text-2xl text-[#8ab4f8]" />
+            <div className="flex items-center gap-5">
+              <div className="">
+                <label htmlFor="sort" className="text-white blFt font-semibold">
+                  Sort :&nbsp;
+                </label>
+                <select
+                  name=""
+                  id="sort"
+                  className="bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded blFt"
+                >
+                  <option className=" bg-gray-700" value="default">
+                    Last
+                  </option>
+                  <option className=" bg-gray-700" value="name">
+                    Name
+                  </option>
+                  <option className=" bg-gray-700" value="date">
+                    date
+                  </option>
+                </select>
+              </div>
+              <div className="">
+                <label
+                  htmlFor="filter"
+                  className="text-white blFt font-semibold"
+                >
+                  Filter :&nbsp;
+                </label>
+                <select
+                  name=""
+                  id="filter"
+                  className="bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded blFt"
+                >
+                  <option className="bg-gray-700" value="default">
+                    All Files
+                  </option>
+                  <option className="bg-gray-700" value="size">
+                    Size
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
           {/* Table */}
           <div className="container mx-auto ms-48 mt-7">
-            <table className="lg:w-[68rem] 2xl:w-[84rem] divide-y divide-gray-200 dark:divide-gray-700 border-[0.1px] ">
+            <table className="lg:w-[68rem] blFt border-[#ff00f2] 2xl:w-[84rem] divide-y divide-gray-200 dark:divide-gray-700 border-[0.1px] ">
               <thead>
                 <tr>
                   <th className="py-3 font-semibold text-lg tracking-wide">
@@ -165,8 +206,8 @@ const Recent = () => {
           </div>
           {/* Table */}
           <div className="ms-48 mt-28 flex justify-between items-center ">
-            <table className="border w-[40%] text-center">
-              <thead className="border-b">
+            <table className="border w-[40%] text-center border-[#ff00f2] blFt">
+              <thead className="border-b border-[#ff00f2]">
                 <tr className="">
                   <th className="py-1 tracking-wide">Total Vouchers</th>
                   <th className="py-1 tracking-wide">Total Cash</th>
@@ -175,7 +216,7 @@ const Recent = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr className="">
                   <td className="py-1 tracking-wide">15</td>
                   <td className="py-1 tracking-wide">4,200,000</td>
                   <td className="py-1 tracking-wide">10,000</td>
@@ -184,13 +225,13 @@ const Recent = () => {
               </tbody>
             </table>
             {/* pagination */}
-            <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
-              <IoIosArrowBack />
-              <p className="">1</p>
-              <p className="">2</p>
-              <p className="">3</p>
-              <IoIosArrowForward />
-            </div>
+          </div>
+          <div className="flex gap-5 blFt items-center border w-36 mt-5 ml-auto bg-[#ff910030] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded">
+            <IoIosArrowBack />
+            <p className="">1</p>
+            <p className="">2</p>
+            <p className="">3</p>
+            <IoIosArrowForward />
           </div>
         </div>
       </div>

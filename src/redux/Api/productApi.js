@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const productApi = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({
-    // baseUrl: "https://a.mmsdev.site/api/v1",
-    baseUrl : "http://192.168.0.158:8000/api/v1"
+    baseUrl: "https://a.mmsdev.site/api/v1",
+    // baseUrl : "http://192.168.0.158:8000/api/v1"
   }),
   tagTypes: ["productApi"],
 

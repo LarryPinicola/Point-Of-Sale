@@ -136,24 +136,24 @@ const Products = () => {
 
   const rows = productLists.map((product, index) => {
     return (
-      <tr className="px-2" key={index}>
-        <td className="py-4 ps-8 text-sm font-medium border-t">{product.no}</td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
+      <tr className="px-2 hover:bg-[#ff910030] hover:backdrop-blur-sm cursor-pointer blFt" key={index}>
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">{product.no}</td>
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           {product.name}
         </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           {product.brand}
         </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           {product.unit}
         </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           {product.price}
         </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t">
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           {product.total}
         </td>
-        <td className="py-4 ps-8 text-sm font-medium border-t ">
+        <td className="py-4 ps-10 text-sm font-medium border-t border-[#ff00f2]">
           <div className="flex gap-3 items-center">
             <div
               className="bg-gray-600 rounded-full p-1 cursor-pointer"
@@ -179,69 +179,89 @@ const Products = () => {
     <div className="w-full">
       <Dashboard />
       <div className="container mx-auto">
-        <div className="mt-5 ms-48">
-          <div className="bg-[#ffffff19] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l rounded-lg cursor-pointer w-full">
+        <div className="my-5 ms-48">
+          <div className="bg-[#ffffff19] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l rounded-lg cursor-pointer w-full py-10 px-3">
             {/* adopt parent */}
             <div className="mx-7">
               {/* title and btns */}
-              <div className="flex justify-between items-center  mt-5">
+              <div className="flex justify-between items-center mt-5">
                 {/* title */}
                 <div className="text-white mb-5">
-                  <h1 className="text-2xl tracking-wide pb-1 font-semibold">
+                  <h1 className="text-2xl tracking-wide pb-1 font-semibold blFt">
                     Products
                   </h1>
-                  <p className="text-gray-400 ">Inventory / Products</p>
+                  <p className="text-gray-300 blFt font-medium">
+                    Inventory / Products
+                  </p>
                 </div>
                 {/* btns */}
                 <div className="flex items-center gap-5">
-                  <button className="text-blue-400 rounded bc px-2 py-1 bg-[#ff00f219] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer">
+                  <button className="text-white rounded bc px-[16px] py-1 bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer blFt">
                     Go to Shop
                   </button>
-                  <button className="flex items-center px-2 py-[7px] bg-blue-400 rounded text-black">
-                    <AiOutlinePlus />
+                  <button className="flex items-center px-2 py-[7px] bg-blue-400 rounded text-white blFt">
+                    <AiOutlinePlus className=" mr-1" />
                     Add Product
                   </button>
                 </div>
               </div>
 
               {/* search n filters n icons */}
-              <h1 className="text-3xl font-semibold ">Products Overview</h1>
+              <h1 className="text-3xl tracking-wide pb-1 font-semibold blFt">
+                Products Overview
+              </h1>
               {/*  */}
-              <div className="mt-3 flex justify-between">
+              <div className="mt-1 flex justify-between">
                 {/* search box */}
                 <Search />
                 {/* filters n icons */}
                 <div className="flex items-center gap-5">
                   <div className="">
-                    <label htmlFor="sort" className="text-gray-900 font-semibold">
+                    <label
+                      htmlFor="sort"
+                      className="text-white blFt font-semibold"
+                    >
                       Sort :&nbsp;
                     </label>
                     <select
                       name=""
                       id="sort"
-                      className="bg-[#202124] outline-none"
+                      className="bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded blFt"
                     >
-                      <option value="default">Last</option>
-                      <option value="name">Name</option>
-                      <option value="date">date</option>
+                      <option className=" bg-gray-700" value="default">
+                        Last
+                      </option>
+                      <option className=" bg-gray-700" value="name">
+                        Name
+                      </option>
+                      <option className=" bg-gray-700" value="date">
+                        date
+                      </option>
                     </select>
                   </div>
                   <div className="">
-                    <label htmlFor="filter" className="text-gray-900 font-semibold">
+                    <label
+                      htmlFor="filter"
+                      className="text-white blFt font-semibold"
+                    >
                       Filter :&nbsp;
                     </label>
                     <select
                       name=""
                       id="filter"
-                      className="bg-[#202124] outline-none"
+                      className="bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded blFt"
                     >
-                      <option value="default">All Files</option>
-                      <option value="size">Size</option>
+                      <option className="bg-gray-700" value="default">
+                        All Files
+                      </option>
+                      <option className="bg-gray-700" value="size">
+                        Size
+                      </option>
                     </select>
                   </div>
                   {/* icons */}
                   <div className="">
-                    <div className="flex items-center gap-2 rounded p-1 bc text-white blFt bg-[#ff00f219] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer">
+                    <div className="flex items-center gap-2 rounded p-1 bc text-white blFt bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer">
                       <div
                         className="cursor-pointer"
                         onClick={() => setTable(true)}
@@ -261,16 +281,16 @@ const Products = () => {
 
               {/* pics list and table list */}
               {table ? (
-                <div className="grid grid-cols-5 gap-5 justify-center mt-5 mx-auto">
+                <div className="grid grid-cols-5 gap-5 justify-center mt-7 mx-auto">
                   {productPics.map((product) => {
                     return <ProductsPics key={product.id} pd={product} />;
                   })}
                 </div>
               ) : (
-                <div className="w-[69rem] mt-5 mx-auto">
+                <div className="mt-7 mx-auto blFt">
                   <table className="w-full">
                     <thead className="">
-                      <tr>
+                      <tr className="">
                         <th className="py-3 px-2 tracking-wide">NO</th>
                         <th className="py-3 px-2 tracking-wide">NAME</th>
                         <th className="py-3 px-2 tracking-wide">BRAND</th>
@@ -284,7 +304,7 @@ const Products = () => {
                 </div>
               )}
               {/* pagination ui */}
-              <div className="flex gap-5 items-center border w-36 border-gray-600 mt-5 ml-auto">
+              <div className="flex gap-5 blFt items-center border w-36 mt-12 ml-auto bg-[#ff910030] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc rounded">
                 <IoIosArrowBack />
                 <p className="">1</p>
                 <p className="">2</p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import {IoIosArrowBack,IoIosArrowForward} from "react-icons/io"
+import "../style/glassmorphic.css";
 
 const Pagination = ({totalPages,setCurrentPage,currentPage,setSearchParams,searchParams}) => {
 
@@ -16,7 +17,7 @@ if (totalPages < 10) {
 const isActive = searchParams.get("page");
 
   return (
-    <div className='flex items-center space-x-5 mt-5 justify-center fixed bottom-0 left-[18%]'>
+    <div className='flex items-center space-x-5 mt-5 justify-center fixed bottom-0 left-[10%] blFt'>
           <IoIosArrowBack 
               className=''
                onClick={() => {
@@ -29,7 +30,7 @@ const isActive = searchParams.get("page");
         {pages?.map((page) => {
           return (
             <button
-              className={`${isActive == page && "bg-[#ff00f219] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer"} p-5`}
+              className={`${isActive == page && "bc bg-[#ff910030] rounded-[50%] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer py-[14px]"} p-5`}
               key={page}
               onClick={() => {
                 setSearchParams(`?page=${page}`);

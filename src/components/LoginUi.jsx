@@ -38,31 +38,6 @@ const LoginUi = () => {
             </span>
           </h1>
 
-        {/* login form */}
-        <form
-          onSubmit={handleSubmit(loginHandler)}
-          className="flex flex-col gap-2"
-        >
-          <input
-            {...register("email")}
-            id="email"
-            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-black"
-            type="text"
-            placeholder="Example@email.com"
-          />
-          <input
-            {...register("password")}
-            id="password"
-            className="outline-0 shadow-2xl mb-5 mt-2 border rounded-lg p-4 w-full text-black"
-            type="password"
-            placeholder="Enter your password"
-          />
-          <button
-            type="submit"
-            mt="sm"
-            className={`bg-gray-800 mt-3 px-8 text-lg py-4 rounded-lg tracking-wide ${
-              isLoading && "btn-disabled"
-            }`}
           <div className=" mx-auto w-[400px] h-9 overflow-hidden mt-[-14px] mb-1">
             <p className=" tracking-[4px] plhtc text-[#E8EAED] text-[26px]">
               Please Login here to continue ...

@@ -57,7 +57,7 @@ const AddProductsStepThree = () => {
                 <div className="flex flex-col items-center gap-16">
                   <h1 className="text-white blFt font-semibold">Upload Photo</h1>
                   <div
-                    className="bg-[#ff910050] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer calBdr rounded-full p-14"
+                    className="bg-[#ff910050] backdrop-blur-sm  glassmorphic border-2 cursor-pointer border-dashed rounded-full p-14"
                     onClick={openModal}
                   >
                     <MdOutlineAddPhotoAlternate className="text-5xl" />
