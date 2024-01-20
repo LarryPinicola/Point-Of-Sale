@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import Dashboard from "./Dashboard";
 import Navbar from "../components/Navbar";
 import { BiSearch } from "react-icons/bi";
 import Card from "../components/Card";
-import axios from "axios";
 import Cookies from "js-cookie";
 import {
-  useGetproductQuery,
   usePaginatePagesQuery,
 } from "../redux/Api/productApi";
 import { concat, indexOf } from "lodash";
