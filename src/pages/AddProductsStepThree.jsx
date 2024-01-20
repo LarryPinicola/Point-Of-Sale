@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 import Modal from "../components/Modal";
 import Navbar from "../components/Navbar";
+import Dashboard from "./Dashboard";
 
 const AddProductsStepThree = () => {
   const [active, setActive] = useState(1);
@@ -26,28 +27,25 @@ const AddProductsStepThree = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="w-full flex">
+      <div className="w-full">
         {/* sidebar */}
-        <div className="border-r bg-[#171717] w-[15%] h-screen flex justify-center items-center">
-          <h1 className="text-xl tracking-widest">sidebar</h1>
-        </div>
+        <Dashboard/>
         {/* step 3 parent */}
-        <div className="bg-[#202124] w-full">
+        <div className="container mx-auto">
           {/* adopt parent */}
-          <div className="mx-7">
+          <div className="mt-5 ms-48 p-10 bg-[#ffffff19] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l rounded-lg cursor-pointer">
             {/* title n btn */}
-            <div className="flex justify-between items-center  mt-5">
+            <div className="flex justify-between items-center mt-5">
               {/* title */}
               <div className="text-white mb-5">
-                <h1 className="text-2xl tracking-wide pb-1 font-semibold">
+                <h1 className="text-2xl tracking-wide pb-1 font-semibold blFt">
                   Products
                 </h1>
-                <p className="text-gray-400 ">Inventory / Add Product</p>
+                <p className="text-gray-300 blFt font-medium ">Inventory / Add Product</p>
               </div>
               {/* btn */}
               <div className="">
-                <button className="px-2 py-1 bg-blue-400 rounded-lg text-black">
+                <button className="px-3 py-2 bg-blue-400 rounded-lg text-white blFt font-semibold">
                   Product List
                 </button>
               </div>
@@ -55,16 +53,16 @@ const AddProductsStepThree = () => {
             {/* upload img n stepper */}
             <div className="mt-6 flex gap-20 items-center">
               {/* upload section */}
-              <div className="border border-gray-400 rounded-lg bg-[#171717] p-5 w-[70%]">
+              <div className="rounded-lg bg-[#ff00f219] backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer bc p-7 w-[70%]">
                 <div className="flex flex-col items-center gap-16">
-                  <h1 className="">Upload Photo</h1>
+                  <h1 className="text-white blFt font-semibold">Upload Photo</h1>
                   <div
-                    className="bg-gray-800 p-14 rounded-full cursor-pointer border-dashed border-blue-400 border"
+                    className="bg-[#ff910050] backdrop-blur-sm  glassmorphic border-2 cursor-pointer border-dashed rounded-full p-14"
                     onClick={openModal}
                   >
                     <MdOutlineAddPhotoAlternate className="text-5xl" />
                   </div>
-                  <button className="bg-blue-400 text-black py-1 px-4 rounded">
+                  <button className="bg-blue-400 text-white py-[6px] font-semibold blFt px-[18px] rounded">
                     Remove
                   </button>
                 </div>
@@ -96,7 +94,7 @@ const AddProductsStepThree = () => {
                 <div className="mt-20 flex gap-5">
                   <Link to={"/addproducts/step2"}>
                     <button
-                      className="border border-gray-400 text-gray-400 py-1 px-4 rounded"
+                      className="border bg-[#ff00f219] bc backdrop-blur-sm border-t-[rgba(255,255,255,0.5)] border-l-[rgba(255,255,255,0.5)] border-solid glassmorphic border-t border-l cursor-pointer border-gray-400 text-white py-1 px-[14px] font-semibold blFt rounded"
                       onClick={prevStep}
                     >
                       Back
